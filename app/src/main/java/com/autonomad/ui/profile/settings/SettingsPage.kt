@@ -13,6 +13,7 @@ import com.autonomad.R
 import com.autonomad.data.models.pref.repo.LocalStorage
 import com.autonomad.ui.MainActivity
 import com.autonomad.ui.login.pin_code_page.PinCodePage
+import com.autonomad.ui.login.login_page.LoginFragment
 import com.autonomad.utils.Methods
 import com.autonomad.utils.PinUtil
 import com.autonomad.utils.navigateBack
@@ -118,7 +119,7 @@ class SettingsPage : Fragment(R.layout.fragment_profile_settings) {
                         PinUtil.clear(requireContext())
                         findNavController().navigate(
                             R.id.action_global_loginFragment,
-                            bundleOf(MainActivity.SET_LOGIN to true)
+                             bundleOf(LoginFragment.SET_LOGIN to true)
                         )
                     } else tt(it)
                 }
