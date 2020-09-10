@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.claims.user_claims.claims.ClaimsViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:visibility="@{safeUnbox(viewmodel.dataLoading) ? View.VISIBLE : View.GONE}" />
+    </RelativeLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="@{safeUnbox(viewmodel.dataLoading) ? View.GONE: View.VISIBLE}">
+    <LinearLayout
+        android:visibility="@{safeUnbox(viewmodel.empty) ? View.VISIBLE : View.GONE}"
+        android:orientation="vertical"
+        android:id="@+id/lin_prof1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:text="0 заявок"
+            android:textColor="@color/grey_4"
+            android:textSize="14sp"
+            android:layout_weight="1"/>
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_weight="2"
+            android:layout_below="@id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background_grey_8_16dp_rectangle"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/text_create_claim1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="У вас еще нет заявок"
+                android:textColor="@color/grey_2"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_create_claim1"
+                android:layout_marginEnd="32dp"
+                android:paddingTop="8dp"
+                android:text="Создайте заявку, чтобы получить предложения от спецов."
+                android:textColor="@color/grey_2"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_penalty_add" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_4"
+            android:textSize="14sp"
+            android:layout_weight="6"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="16">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text=""/>
+        <ImageView
+            android:layout_below="@id/rel1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_frame_claim" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text=""/>
+    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_4"
+            android:textSize="14sp"
+            android:layout_weight="6"/>
+        <Button
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/btn_open_claim"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/background_blue_rectangle"
+            android:text="Создать заявку"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="@{safeUnbox(viewmodel.empty) ? View.GONE : View.VISIBLE}">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:text='@{String.valueOf(viewmodel.servicesreq.count)+" заявок"}'
+            android:textColor="@color/grey_4"
+            android:textSize="14sp" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/claims_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/createClaim"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/background_blue_rectangle"
+            android:gravity="center"
+            android:text="Создать заявку"
+            android:textColor="@color/grey_9"
+            android:textSize="18sp" />
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
+

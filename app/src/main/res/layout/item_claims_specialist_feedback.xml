@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="status"
+            type="int" />
+
+        <variable
+            name="request"
+            type="com.autonomad.data.models.claims.ServiceRequest" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@{status == 0 ? @color/grey_8 : status == 1 ? @color/light_blue : @color/light_green_2}"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_client_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="32dp"
+                android:layout_toEndOf="@id/iv_options"
+                android:text="@{request.profile.firstName}"
+                android:textColor="@color/grey_2"
+                android:textFontWeight="600"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/iv_options"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_penalty_opportunity" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/iv_options"
+                android:layout_marginTop="12dp"
+                android:alpha="0.1"
+                android:background="@color/grey_2" />
+
+            <ImageView
+                android:id="@+id/iv_feedback"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_below="@id/divider"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/ic_bottom_feedbacs" />
+
+            <TextView
+                android:id="@+id/tv_problem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@id/iv_feedback"
+                android:text="@{request.description}"
+                android:textColor="@color/grey_3"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_problem"
+                android:layout_alignStart="@id/tv_problem"
+                android:alpha="0.4"
+                android:text="@{request.time}"
+                android:textColor="@color/grey_2" />
+
+            <ImageView
+                android:id="@+id/iv_dot"
+                android:layout_width="3dp"
+                android:layout_height="3dp"
+                android:layout_alignTop="@id/tv_date"
+                android:layout_alignBottom="@id/tv_date"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toEndOf="@id/tv_date"
+                android:src="@drawable/ic_dot"
+                android:visibility="@{request.time.length() == 0 ? View.GONE : View.VISIBLE}" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tv_date"
+                android:layout_toEndOf="@id/iv_dot"
+                android:text="@{request.budget != null ? @string/price(String.valueOf(request.budget)) : @string/null_price}"
+                android:textColor="@color/grey_3" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

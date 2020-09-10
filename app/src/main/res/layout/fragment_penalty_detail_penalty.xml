@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.penalty.penalties_of_person.PenaltyDetailViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{viewmodel.result.loading ? View.VISIBLE : View.GONE}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewmodel.result.loading ? View.GONE : View.VISIBLE}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
+                tools:targetApi="p">
+
+                <ImageButton
+                    android:id="@+id/ic_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_default_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@{@string/price(viewmodel.result.item.balance_size)}"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="600"
+                    android:textSize="20sp"
+                    android:visibility="@{viewmodel.result.item != null ? View.VISIBLE : View.INVISIBLE}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Номер материала"
+                    android:textColor="@color/grey_4"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.result.item.actNum ?? ``}"
+                    android:textColor="@color/grey_2"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Основание"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_qualification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.result.item.qualification ?? ``}"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="400"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Дата рассмотрения"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="400"
+                    android:textSize="17sp"
+                    app:newPattern="@{`d.MM.yyyy`}"
+                    app:oldDateString="@{viewmodel.result.item.protocolDate}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Дата нарушения"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="400"
+                    android:textSize="17sp"
+                    app:newPattern="@{`d.MM.yyyy`}"
+                    app:oldDateString="@{viewmodel.result.item.commissionDate}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Орган, выявший правонарушение"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.result.item.offenceOrg ?? ``}"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="400"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Основная мера"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="400"
+                    android:textSize="17sp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <Button
+                        android:id="@+id/pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/background_blue_rectangle"
+                        android:enabled="@{!viewmodel.url.loading}"
+                        android:text="@{viewmodel.url.loading ? `` : `Оплатить`}"
+                        android:textColor="@color/grey_9"
+                        android:textFontWeight="500"
+                        android:textSize="17sp" />
+
+                    <ProgressBar
+                        android:layout_gravity="center"
+                        android:visibility="@{viewmodel.url.loading ? View.VISIBLE : View.GONE}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

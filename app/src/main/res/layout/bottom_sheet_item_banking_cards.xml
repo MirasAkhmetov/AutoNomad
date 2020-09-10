@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.payment.BankingCardResult" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ic_bank_logo"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_banking_card_logo" />
+
+        <TextView
+            android:id="@+id/digits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/ic_bank_logo"
+            android:text="@{`******`+itemData.card_last_four}"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="500"
+            android:textSize="16sp" />
+
+        <!--    <ImageView-->
+        <!--        android:id="@+id/ic_check"-->
+        <!--        android:layout_width="24dp"-->
+        <!--        android:layout_height="24dp"-->
+        <!--        android:layout_alignParentEnd="true"-->
+        <!--        android:layout_centerVertical="true"-->
+        <!--        android:src="@drawable/ic_banking_card_checked" />-->
+    </RelativeLayout>
+</layout>

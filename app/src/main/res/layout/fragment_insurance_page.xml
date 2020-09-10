@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="insurance"
+            type="com.autonomad.data.models.insurance.InsuranceHistory" />
+
+        <variable
+            name="isLoading"
+            type="boolean" />
+
+        <variable
+            name="isValid"
+            type="boolean" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.insurance.page.InsurancePageFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            tools:ignore="ScrollViewSize">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_default_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_penalty_notification_off"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_is_valid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@{insurance.getValidityText(false)}"
+                android:textColor="@color/grey_3"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/iv_back"
+                app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_profile_male"
+                app:layout_constraintStart_toStartOf="@id/tv_is_valid"
+                app:layout_constraintTop_toBottomOf="@id/tv_is_valid" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{insurance.driver.name}"
+                android:textColor="@color/grey_3"
+                android:textSize="19sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+            <ImageView
+                android:id="@+id/iv_car"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_bottom_sheet_car"
+                app:layout_constraintStart_toStartOf="@id/iv_avatar"
+                app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
+
+            <TextView
+                android:id="@+id/tv_car_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{(insurance.cars.mark.name ?? ``) + ` ` + (insurance.cars.model.name ?? `-`)}"
+                android:textColor="@color/grey_3"
+                android:textSize="15sp"
+                android:visibility="@{insurance.cars.mark != null &amp;&amp; insurance.cars.model != null ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@id/iv_car"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_name"
+                app:layout_constraintTop_toTopOf="@id/iv_car" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@{insurance.getStatusBackgroundColor(context)}"
+                app:layout_constraintTop_toBottomOf="@id/iv_car">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_iin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{insurance.driver.target}"
+                        android:textColor="@color/grey_3"
+                        android:textSize="17sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_state_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/background_rectangle_stroke_grey_2_7dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="6dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_iin">
+
+                        <TextView
+                            android:id="@+id/tv_number_first"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/grey_2"
+                            android:textSize="16sp"
+                            app:part="@{0}"
+                            app:stateNumber="@{insurance.insuranceCheck.tfNumber}" />
+
+                        <TextView
+                            android:id="@+id/tv_number_second"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:textColor="@color/grey_2"
+                            android:textSize="16sp"
+                            app:part="@{1}"
+                            app:stateNumber="@{insurance.insuranceCheck.tfNumber}" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="26dp"
+                            android:layout_marginStart="12dp"
+                            android:background="@color/grey_2" />
+
+                        <TextView
+                            android:id="@+id/tv_number_third"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:textColor="@color/grey_2"
+                            android:textSize="16sp"
+                            app:part="@{2}"
+                            app:stateNumber="@{insurance.insuranceCheck.tfNumber}" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lbl_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Уникальный номер:"
+                        android:textColor="@color/grey_4"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/tv_id"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/layout_state_number" />
+
+                    <TextView
+                        android:id="@+id/tv_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:text="@{(!insurance.insuranceCheck.globalId.trim().equalsIgnoreCase(``)) ? insurance.insuranceCheck.globalId : `-` }"
+                        app:layout_constraintBaseline_toBaselineOf="@id/lbl_id"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/lbl_id" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/lbl_id">
+
+                        <TextView
+                            android:id="@+id/active_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Действительна"
+                            android:textColor="@color/situational_error"
+                            android:visibility="@{(insurance.isInsuranceValid()) ? View.VISIBLE : View.GONE}" />
+
+                        <TextView
+                            android:id="@+id/active_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@{insurance.getValidityColor(context)}"
+                            android:visibility="@{(insurance.isInsuranceValid()) ? View.VISIBLE : View.GONE}"
+                            app:newPattern="@{`dd MMMM, yyyy`}"
+                            app:oldDateString="@{insurance.insuranceCheck.endDate}"
+                            app:pattern="@{`yyyy-MM-dd`}"
+                            app:prefix="@{` до`}" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/status_lbl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{insurance.getValidityText(true)}"
+                        android:textColor="@{insurance.getValidityColor(context)}"
+                        android:visibility="@{(insurance.isInsuranceValid()) ? View.GONE : View.VISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lbl_id" />
+
+                    <Button
+                        android:id="@+id/btn_buy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="72dp"
+                        android:background="@drawable/background_blue_rectangle"
+                        android:text="Купить"
+                        android:textAllCaps="false"
+                        android:textColor="@color/grey_9"
+                        android:textSize="17sp"
+                        android:visibility="@{isValid ? View.GONE : View.VISIBLE}"
+                        app:layout_constraintTop_toBottomOf="@id/status_lbl" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/save_cont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="40dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_info">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Сохранить данные"
+                    android:textColor="@color/grey_3"
+                    android:textSize="15sp"
+                    android:visibility="@{(insurance.insuranceCheck.isFavorite == true) ? View.GONE : View.VISIBLE}" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sw_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:thumb="@drawable/background_switch_thumb_selector"
+                    android:visibility="@{(insurance.insuranceCheck.isFavorite == true) ? View.GONE : View.VISIBLE}"
+                    app:track="@drawable/background_switch_track_selector" />
+
+            </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_reference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/grey_8"
+                android:paddingTop="13dp"
+                android:paddingBottom="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/save_cont"
+                app:layout_constraintVertical_bias="1.0">
+
+                <ImageView
+                    android:id="@+id/iv_reference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_insurance_reference"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_src"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingHorizontal="90dp"
+                    android:text="@string/reference"
+                    android:textAlignment="center"
+                    android:textColor="@color/grey_4"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_reference" />
+
+                <TextView
+                    android:id="@+id/tv_data_period"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/grey_4"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_src"
+                    app:newPattern="@{`dd MMMM, yyyy`}"
+                    app:oldDateString="@{insurance.insuranceCheck.dateCheck}"
+                    app:pattern="@{`yyyy-MM-dd`}"
+                    app:prefix="@{`Данные актуальны: на`}" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="card_info,save_cont,tv_is_valid,iv_avatar,tv_car_info,tv_name,iv_car" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

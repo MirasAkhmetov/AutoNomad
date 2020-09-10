@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/grey_9"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_profile_friends" />
+
+    <TextView
+        android:id="@+id/text_name_of_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/image"
+        android:text="Kolesiki Group"
+        android:textColor="@color/grey_4"
+        android:textFontWeight="400"
+        android:textSize="10dp" />
+
+    <TextView
+
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_name_of_group"
+        android:layout_toEndOf="@+id/image"
+        android:text="25% скидка на первую покупку"
+        android:textColor="@color/Black"
+        android:textFontWeight="400"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_default_verification" />
+
+</RelativeLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.claim_user.Master" />
+    </data>
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rv_mast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_9"
+        android:padding="8dp">
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_user"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/Transparent"
+            android:scaleType="fitXY"
+            android:translationZ="10dp"
+            app:riv_oval="true" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_user"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="-46dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="14dp"
+            android:background="@color/White"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:translationZ="5dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            android:elevation="0dp"
+            app:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center_horizontal"
+                    android:padding="6dp"
+                    android:text="@{itemData.prof.first_name}"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/job"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:text='@{itemData.description.split(",", 2)[0]}'
+                    android:textColor="@color/grey_4"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/background_grey_3_12dp_rectangle"
+                    android:paddingStart="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_claim_one_star" />
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginRight="4dp"
+                        android:text="@{String.valueOf(itemData.star_avg)}"
+                        android:textColor="@color/white"
+                        android:textFontWeight="800"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</FrameLayout>
+
+</layout>

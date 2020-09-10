@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingHorizontal="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:autofillHints="phone number"
+            android:background="@drawable/background_grey_8_12dp_rectangle"
+            android:drawableStart="@drawable/ic_default_phone_number"
+            android:drawablePadding="12dp"
+            android:hint="@string/phone_number_hint"
+            android:inputType="phone"
+            android:paddingHorizontal="16dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:autofillHints="@string/password"
+                android:background="@drawable/background_grey_8_12dp_rectangle"
+                android:drawableStart="@drawable/ic_default_password"
+                android:drawablePadding="12dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <ImageView
+                android:id="@+id/visibility"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="@color/grey_8"
+                android:src="@drawable/ic_login_invisible_password" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:translationZ="10dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/login"
+                style="@style/ButtonPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/login" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/button_forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:text="@string/forgot_password"
+            android:textColor="@color/grey_4"
+            android:textSize="14sp" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

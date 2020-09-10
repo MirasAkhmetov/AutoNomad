@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.parking.history.DetailReceiptViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true"
+                android:visibility="@{safeUnbox(viewmodel.dataLoading) ? View.VISIBLE : View.GONE}" />
+        </RelativeLayout>
+
+
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/White"
+            android:orientation="vertical"
+            android:visibility="@{safeUnbox(viewmodel.dataLoading) ? View.GONE : View.VISIBLE}">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <ImageButton
+                    android:id="@+id/ic_back"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_default_back" />
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Квитанция"
+                        android:textColor="@color/Black"
+                        android:textFontWeight="400"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/background_white_with_grey7_line"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                tools:ignore="NestedWeights">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="24dp"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:text="@{viewmodel.result.date1}"
+                                    android:textColor="@color/grey_2"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="24dp"
+                                    android:layout_marginStart="16dp"
+                                    android:text="@{viewmodel.result.date2}"
+                                    android:textColor="@color/grey_2"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="16dp"
+                                android:src="@drawable/ic_logo" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            android:background="@color/grey_8"
+                            android:gravity="center_vertical"
+                            android:paddingStart="16dp"
+                            android:text="История паркинга"
+                            android:textColor="@color/grey_2"
+                            android:textFontWeight="600"
+                            android:textSize="18sp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="№ квитанции :"
+                                android:textColor="@color/grey_4"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="@{viewmodel.result.id + ``}"
+                                android:textColor="@color/grey_2"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="Паркинг № :"
+                                android:textColor="@color/grey_4"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="@{viewmodel.result.parking.zoneNum}"
+                                android:textColor="@color/grey_2"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="Время паркинга: "
+                                android:textColor="@color/grey_4"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="@{viewmodel.result.parking.minute + ` мин`}"
+                                android:textColor="@color/grey_2"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="Итого оплачено :"
+                                android:textColor="@color/grey_4"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="@{viewmodel.result.price +`₸`}"
+                                android:textColor="@color/grey_2"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="ФИО покупателя :"
+                                android:textColor="@color/grey_4"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="Нет имени"
+                                android:textColor="@color/grey_2"
+                                android:textFontWeight="500"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="Оплачено с :"
+                                android:textColor="@color/grey_4"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_banking_card_logo" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="4dp"
+                                    android:gravity="center_vertical"
+                                    android:text="@{`****`+viewmodel.result.card.cardLastFour}"
+                                    android:textColor="@color/grey_2"
+                                    android:textFontWeight="500"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/btn_to_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="32dp"
+                        android:background="@drawable/background_blue_rectangle"
+                        android:gravity="center"
+                        android:text="На главную"
+                        android:textAllCaps="false"
+                        android:textColor="@color/grey_9"
+                        android:textFontWeight="500"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

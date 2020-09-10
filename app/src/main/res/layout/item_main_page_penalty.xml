@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="driver"
+            type="com.autonomad.data.models.penalty.Driver" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_profile_male"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{driver.name}"
+            android:textColor="@color/grey_3"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
+
+        <ImageView
+            android:id="@+id/iv_penalties"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="20dp"
+            app:imageRes="@{driver.penaltyCount > 0 ? @drawable/ic_bad : @drawable/ic_good}"
+            app:layout_constraintStart_toStartOf="@id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
+
+        <TextView
+            android:id="@+id/tv_last_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_4"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_penalties"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toTopOf="@id/iv_penalties" />
+
+        <TextView
+            android:id="@+id/tv_penalties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{driver.penaltyCount > 1 ? `обнаружены штрафы` : driver.penaltyCount == 1 ? `обнаружен штраф` : `все чисто` }"
+            android:textColor="@{driver.penaltyCount > 0 ? @color/situational_red_error : @color/grey_3}"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_penalties"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_last_update" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/ProgressColor"
+            app:layout_constraintTop_toBottomOf="@id/iv_penalties" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

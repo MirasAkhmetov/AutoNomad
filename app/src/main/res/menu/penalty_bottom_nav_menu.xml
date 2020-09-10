@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/penalty"
+        android:icon="@drawable/ic_bottom_nav_home"
+        android:title="@string/penalty" />
+
+<!--    <item-->
+<!--        android:id="@+id/penalty_premium"-->
+<!--        android:icon="@drawable/ic_premium_passiv"-->
+<!--        android:title="@string/premium" />-->
+
+    <item
+        android:id="@+id/penalty_history"
+        android:icon="@drawable/ic_bottom_nav_history"
+        android:title="@string/history" />
+
+    <item
+        android:id="@+id/service_exit"
+        android:icon="@drawable/ic_bottom_nav_exit"
+        android:title="@string/exit" />
+
+</menu>

@@ -1,0 +1,1365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/main_page"
+        android:name="com.autonomad.ui.main_page.home.MainPage"
+        android:label="@string/main_page"
+        tools:layout="@layout/fragment_main_page">
+        <action
+            android:id="@+id/action_main_page_to_storiesFragment"
+            app:destination="@id/storiesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_page_to_insurance_page"
+            app:destination="@id/insurance_page"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_page_to_insurance_home"
+            app:destination="@id/insurance_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_page_to_penalties_of_person"
+            app:destination="@id/penaltiesOfPerson"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_page_to_penalties"
+            app:destination="@id/penalty"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_page_to_tech_inspection"
+            app:destination="@id/tech_inspection_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_page_to_category_list"
+            app:destination="@id/categoryList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_page_to_claims_specialist_responses"
+            app:destination="@id/claim_specialist_feedback"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_page_to_user_claims"
+            app:destination="@id/claim_user_claims"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/services"
+        android:name="com.autonomad.ui.services.ServicesFragment"
+        android:label="@string/services"
+        tools:layout="@layout/fragment_services">
+        <action
+            android:id="@+id/action_services_to_penalty"
+            app:destination="@id/penalty"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_services_to_parking"
+            app:destination="@id/parking_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_services_to_insuranceHome"
+            app:destination="@id/insurance_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_services_to_checkAutoHome"
+            app:destination="@id/check_auto_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_services_to_claim_user_home"
+            app:destination="@id/claim_user_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_services_to_claim_specialist_home"
+            app:destination="@id/claim_specialist_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_services_to_shop_home"
+            app:destination="@id/shop_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/service_exit"
+        android:name="com.autonomad.ui.services.ServicesPage1" />
+
+    <fragment
+        android:id="@+id/chats"
+        android:name="com.autonomad.ui.chats.ChatsFragment"
+        android:label="@string/chat"
+        tools:layout="@layout/fragment_chats">
+        <action android:id="@+id/action_chats_list_to_chat"
+            app:destination="@id/messages"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/messages"
+        android:name="com.autonomad.ui.chats.chat.ChatFragment"
+        tools:layout="@layout/fragment_chat"
+        android:label="" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.autonomad.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_to_userPageFragment"
+            app:destination="@id/userPageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profile_to_settingsPage"
+            app:destination="@id/settingsPage"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_profile_to_bankingCardAdd"
+            app:destination="@id/bankingCardAdd"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_profile_to_newDocument"
+            app:destination="@id/newDocument"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_profile_to_carsPageDetail"
+            app:destination="@id/carsPageDetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profile_to_driverPageDetail"
+            app:destination="@id/driversPageDetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_settings_addresses"
+        android:name="com.autonomad.ui.profile.settings.addresses.AddressesFragment"
+        android:label=""
+        tools:layout="@layout/fragment_profile_settings_addresses">
+        <action
+            android:id="@+id/action_profile_settings_addresses_to_edit"
+            app:destination="@id/fragment_settings_addresses_edit"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_settings_addresses_edit"
+        android:name="com.autonomad.ui.profile.settings.addresses.EditAddressFragment"
+        android:label=""
+        tools:layout="@layout/fragment_profile_settings_address_edit" />
+
+    <fragment
+        android:id="@+id/storiesFragment"
+        android:name="com.autonomad.ui.main_page.stories.StoriesFragment"
+        android:label=""
+        tools:layout="@layout/fragment_stories" />
+    <fragment
+        android:id="@+id/tech_inspection_fragment"
+        android:name="com.autonomad.ui.main_page.tech_inspection.TechInspectionFragment"
+        android:label=""
+        tools:layout="@layout/fragment_main_page_tech_inspection" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.autonomad.ui.login.login_page.LoginFragment"
+        android:label=""
+        tools:layout="@layout/login_page">
+        <action
+            android:id="@+id/action_loginFragment_to_passwordRecoveryStep1"
+            app:destination="@id/passwordRecoveryStep1"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordRecoveryStep1"
+        android:name="com.autonomad.ui.login.password_recovery.PasswordRecoveryStep1"
+        android:label=""
+        tools:layout="@layout/fragment_password_recovery_step1">
+        <action
+            android:id="@+id/action_passwordRecoveryStep1_to_passwordRecoveryStep3"
+            app:destination="@id/passwordRecoveryStep3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordRecoveryStep3"
+        android:name="com.autonomad.ui.login.password_recovery.PasswordRecoveryStep3"
+        android:label=""
+        tools:layout="@layout/fragment_password_recovery_step3" />
+    <fragment
+        android:id="@+id/userPageFragment"
+        android:name="com.autonomad.ui.profile.UserPageFragment"
+        android:label=""
+        tools:layout="@layout/fragment_profile_user_page" />
+    <fragment
+        android:id="@+id/expensesFragment"
+        android:name="com.autonomad.ui.main_page.expenses.ExpensesFragment"
+        android:label=""
+        tools:layout="@layout/fragment_main_page_expenses">
+        <action
+            android:id="@+id/action_expensesFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_expensesFragment_to_ticketsFragment"
+            app:destination="@id/ticketsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/penalty"
+        android:name="com.autonomad.ui.penalty.penalty_home.PenaltyHomeFragment"
+        android:label="@string/penalty"
+        tools:layout="@layout/fragment_penalty_home">
+        <action
+            android:id="@+id/action_penalty_to_penaltiesOfPerson"
+            app:destination="@id/penaltiesOfPerson"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/penalty_history"
+        android:name="com.autonomad.ui.penalty.penalty_history.PenaltyHistoryFragment"
+        android:label="@string/history"
+        tools:layout="@layout/fragment_penalty_history">
+        <action
+            android:id="@+id/action_penalty_history_to_penalty"
+            app:destination="@id/penalty"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_penalty_history_to_penaltyTicketFragment"
+            app:destination="@id/penaltyTicketFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/penaltyTicketFragment"
+        android:name="com.autonomad.ui.penalty.penalty_receipt.PenaltyCheckFragment"
+        android:label=""
+        tools:layout="@layout/fragment_penalty_check" />
+    <fragment
+        android:id="@+id/penaltiesOfPerson"
+        android:name="com.autonomad.ui.penalty.penalties_of_person.PenaltiesOfPerson"
+        android:label="PenaltiesOfPerson"
+        tools:layout="@layout/fragment_penalties_of_person">
+        <action
+            android:id="@+id/action_penaltiesOfPerson_to_penaltyDetail"
+            app:destination="@id/penaltyDetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/pinCodePage"
+        android:name="com.autonomad.ui.login.pin_code_page.PinCodePage"
+        android:label="PinCodePage"
+        tools:layout="@layout/fragment_login_pin_code">
+        <action
+            android:id="@+id/action_pinCodePage_to_main_page"
+            app:destination="@id/main_page"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.autonomad.ui.calendar.ExpensesCalendarFragment"
+        android:label="CalendarFragment"
+        tools:layout="@layout/fragment_expenses_calendar" />
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="com.autonomad.ui.main_page.expenses.ReceiptsFragment"
+        android:label="TicketsFragment"
+        tools:layout="@layout/fragment_receipts" />
+
+
+    <fragment
+        android:id="@+id/parking_home"
+        android:name="com.autonomad.ui.parking.home.Home"
+        android:label="@string/parking"
+        tools:layout="@layout/fragment_parking_home">
+        <action
+            android:id="@+id/action_parking_home_to_detailTicketInformation"
+            app:destination="@id/detailTicketInformation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/parking_history"
+        android:name="com.autonomad.ui.parking.history.History"
+        android:label="@string/history"
+        tools:layout="@layout/fragment_parking_history">
+        <action
+            android:id="@+id/action_parking_history_to_parking"
+            app:destination="@id/parking_home"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_parking_history_to_detailTicketInformation"
+            app:destination="@id/detailTicketInformation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_parking_history_to_parkingCalendar"
+            app:destination="@id/parkingCalendar"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailTicketInformation"
+        android:name="com.autonomad.ui.parking.history.DetailReceipt"
+        android:label=""
+        tools:layout="@layout/fragment_parking_detail_receipt" />
+    <fragment
+        android:id="@+id/parkingCalendar"
+        android:name="com.autonomad.ui.calendar.ParkingCalendarFragment"
+        android:label=""
+        tools:layout="@layout/fragment_parking_calendar" />
+    <fragment
+        android:id="@+id/penaltyDetail"
+        android:name="com.autonomad.ui.penalty.penalties_of_person.PenaltyDetail"
+        android:label="PenaltyDetail"
+        tools:layout="@layout/fragment_penalty_detail_penalty">
+        <action
+            android:id="@+id/action_penaltyDetail_to_penalty"
+            app:destination="@id/penalty"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_penaltyDetail_to_makeOrder"
+            app:destination="@id/makeOrder"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/makeOrder"
+        android:name="com.autonomad.ui.penalty.penalties_of_person.MakeOrder"
+        android:label="MakeOrder"
+        tools:layout="@layout/fragment_penalty_make_order">
+        <action
+            android:id="@+id/action_makeOrder_to_penalty_history"
+            app:destination="@id/penalty_history"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right" />
+    <action
+        android:id="@+id/action_global_pinCodePage"
+        app:destination="@id/pinCodePage"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left" />
+    <action
+        android:id="@+id/action_global_main_page"
+        app:destination="@id/main_page" />
+    <action
+        android:id="@+id/action_global_services"
+        app:destination="@id/services"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right" />
+
+
+    <fragment
+        android:id="@+id/insurance_home"
+        android:name="com.autonomad.ui.insurance.insurance_home.InsuranceHome"
+        android:label="@string/insurance"
+        tools:layout="@layout/fragment_insurance_home">
+        <action
+            android:id="@+id/action_insurance_home_to_insurance_page"
+            app:destination="@id/insurance_page"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_insurance_home_to_insurance_home"
+            app:destination="@id/insurance_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/insurance_policy"
+        android:name="com.autonomad.ui.insurance.insurance_policy.InsurancePolicyFragment"
+        android:label="Страховые полисы"
+        tools:layout="@layout/fragment_insurance_policy">
+        <action
+            android:id="@+id/action_insurance_policy_to_insurance_home"
+            app:destination="@id/insurance_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_insurance_policy_to_insurance_policy_details"
+            app:destination="@id/insurance_policy_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/insurance_policy_details"
+        android:name="com.autonomad.ui.insurance.insurance_policy.InsurancePolicyDetailsFragment"
+        tools:layout="@layout/fragment_insurance_policy_details" />
+    <fragment
+        android:id="@+id/insurance_page"
+        android:name="com.autonomad.ui.insurance.page.InsurancePageFragment"
+        android:label=""
+        tools:layout="@layout/fragment_insurance_page">
+        <action
+            android:id="@+id/action_insurance_page_to_insurance_policy"
+            app:destination="@id/insurance_policy"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsPage"
+        android:name="com.autonomad.ui.profile.settings.SettingsPage"
+        android:label="SettingsPage"
+        tools:layout="@layout/fragment_profile_settings">
+        <action
+            android:id="@+id/action_to_settings_address"
+            app:destination="@id/fragment_settings_addresses"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_sett_bank"
+            app:destination="@id/bankSpisok"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_sett_documsett"
+            app:destination="@id/documentSett"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_sett_supp"
+            app:destination="@id/claim_specialist_support"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_sett_changepass"
+            app:destination="@id/changePass"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_profile"
+        app:destination="@id/profile"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right" />
+    <fragment
+        android:id="@+id/bankingCardAdd"
+        android:name="com.autonomad.ui.profile.BankingCardAdd"
+        android:label="BankingCardAdd"
+        tools:layout="@layout/fragment_profile_set_banking_card" />
+    <fragment
+        android:id="@+id/newDocument"
+        android:name="com.autonomad.ui.profile.NewDocument"
+        android:label="NewDocument"
+        tools:layout="@layout/fragment_profile_new_document" />
+    <fragment
+        android:id="@+id/check_auto_home"
+        android:name="com.autonomad.ui.check_auto.home.CheckAuto"
+        android:label="@string/check_auto"
+        tools:layout="@layout/fragment_check_auto_home">
+        <action
+            android:id="@+id/action_check_auto_home_to_checkAutoInfo"
+            app:destination="@id/checkAutoInfo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_check_auto_home_to_report"
+            app:destination="@id/report"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_check_auto_home_to_check_auto_home"
+            app:destination="@id/check_auto_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/check_auto_car_list"
+        android:name="com.autonomad.ui.check_auto.history_list.CheckAutoHistoryListFragment"
+        tools:layout="@layout/fragment_check_auto_history_list">
+        <action
+            android:id="@+id/action_check_auto_car_list_to_report"
+            app:destination="@id/report"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/check_auto_history"
+        android:name="com.autonomad.ui.check_auto.history.CheckAutoHistoryFragment"
+        android:label="@string/history"
+        tools:layout="@layout/fragment_check_auto_history">
+        <action
+            android:id="@+id/action_check_auto_history_to_detailTicket"
+            app:destination="@id/detailTicket"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_check_auto_history_to_home"
+            app:destination="@id/check_auto_home"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkAutoInfo"
+        android:name="com.autonomad.ui.check_auto.guide.CheckAutoInfo"
+        android:label="CheckAutoInfo"
+        tools:layout="@layout/fragment_check_auto_info" />
+    <fragment
+        android:id="@+id/detailTicket"
+        android:name="com.autonomad.ui.check_auto.receipt.DetailReceipt"
+        android:label="DetailTicket"
+        tools:layout="@layout/fragment_check_auto_detail_receipt">
+        <action
+            android:id="@+id/action_detailTicket_to_check_auto_history"
+            app:destination="@id/check_auto_history"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_detailTicket_to_check_auto_report"
+            app:destination="@id/report"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/report"
+        android:name="com.autonomad.ui.check_auto.report.Report"
+        android:label="Report"
+        tools:layout="@layout/fragment_check_auto_report">
+        <action
+            android:id="@+id/action_report_to_payment"
+            app:destination="@id/payment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_check_auto_report_to_history"
+            app:destination="@id/check_auto_history"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_check_auto_report_to_home"
+            app:destination="@id/check_auto_home"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/claim_user_home"
+        android:name="com.autonomad.ui.claims.user_claims.home.Home"
+        android:label="Лента"
+        tools:layout="@layout/fragment_claims_user_home">
+        <action
+            android:id="@+id/action_claim_user_home_to_claimuser"
+            app:destination="@id/claim_user_claims"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_user_home_to_categorieslist"
+            app:destination="@id/categoryList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_categories_to_detailMaster"
+            app:destination="@id/detailMaster"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/claim_user_claims"
+        android:name="com.autonomad.ui.claims.user_claims.claims.MyClaimsFragment"
+        android:label="Мои заявки"
+        tools:layout="@layout/fragment_claims_user_my_claims">
+        <action
+            android:id="@+id/action_claim_user_claims_to_createClaim"
+            app:destination="@id/createClaim"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_usser_feedback_to_detailClaim"
+            app:destination="@id/detailClaim"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_Claim_to_replies"
+            app:destination="@id/replies"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_Claim_to_oneclaim"
+            app:destination="@id/createClaim1"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_user_claims_to_detailClaim2"
+            app:destination="@id/detailClaim2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/claim_user_settings"
+        android:name="com.autonomad.ui.claims.user_claims.settings.Settings"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_claims_user_settings">
+        <action
+            android:id="@+id/action_claim_user_settings_to_favourites"
+            app:destination="@id/favourites"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_user_settings_to_claim_specialist_home"
+            app:destination="@id/claim_specialist_home"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_usser_settings_to_support"
+            app:destination="@id/claim_specialist_support"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailMaster"
+        android:name="com.autonomad.ui.claims.user_claims.home.categories.DetailMaster"
+        android:label="DetailMaster"
+        tools:layout="@layout/fragment_claims_user_detail_master">
+        <action
+            android:id="@+id/action_detailMaster_to_feedback"
+            app:destination="@id/feedback2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedback2"
+        android:name="com.autonomad.ui.claims.user_claims.home.categories.Feedback"
+        android:label="Feedback"
+        tools:layout="@layout/fragment_claims_user_master_feedbacks" />
+    <fragment
+        android:id="@+id/createClaim"
+        android:name="com.autonomad.ui.claims.user_claims.claims.CreateClaim"
+        android:label="CreateClaim"
+        tools:layout="@layout/fragment_claims_user_create_claim" />
+    <fragment
+        android:id="@+id/replies"
+        android:name="com.autonomad.ui.claims.user_claims.claims.Replies"
+        android:label="Replies"
+        tools:layout="@layout/fragment_claims_user_replies" />
+    <fragment
+        android:id="@+id/favourites"
+        android:name="com.autonomad.ui.claims.user_claims.settings.Favourites"
+        android:label="Favourites"
+        tools:layout="@layout/fragment_claims_user_favourites">
+        <action
+            android:id="@+id/action_favourites_to_rate"
+            app:destination="@id/rate"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/rate"
+        android:name="com.autonomad.ui.claims.user_claims.settings.Rate"
+        android:label="Rate"
+        tools:layout="@layout/fragment_claims_user_rate" />
+    <fragment
+        android:id="@+id/claim_specialist_home"
+        android:name="com.autonomad.ui.claims.specialist_claims.home.Home"
+        android:label="Лента"
+        tools:layout="@layout/fragment_claims_specialist_home">
+        <action
+            android:id="@+id/action_claim_specialist_home_to_categoryList"
+            app:destination="@id/specialistCategoryList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_specialist_home_to_detailClaim"
+            app:destination="@id/detailClaim"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_specialist_home_to_claim_user_home"
+            app:destination="@id/claim_user_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_claim_specialist_home_to_repair_auto"
+            app:destination="@id/repairAuto"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_specialist_home_to_profile"
+            app:destination="@id/specialist_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/claim_specialist_feedback"
+        android:name="com.autonomad.ui.claims.specialist_claims.feedback.Feedback"
+        android:label="Отклики"
+        tools:layout="@layout/fragment_claims_specialist_feedback">
+        <action
+            android:id="@+id/action_claim_specialist_feedback_to_detailClaim"
+            app:destination="@id/detailClaim"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_specialist_feedback_to_home"
+            app:destination="@id/claim_specialist_home"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/claim_specialist_settings"
+        android:name="com.autonomad.ui.claims.specialist_claims.settings.Settings"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_claims_specialist_settings">
+        <action
+            android:id="@+id/action_claim_specialist_settings_to_claim_user_home"
+            app:destination="@id/claim_user_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_claim_specialist_settings_to_claim_specialist_profile"
+            app:destination="@id/specialist_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_specialist_settings_to_support"
+            app:destination="@id/claim_specialist_support"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_specialist_settings_to_statistics"
+            app:destination="@id/claim_specialist_statistics"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_specialist_settings_to_tariffs"
+            app:destination="@id/claim_specialist_tariffs"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claim_specialist_settings_to_home"
+            app:destination="@id/claim_specialist_home"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/specialistCategoryList"
+        android:name="com.autonomad.ui.claims.specialist_claims.home.category.CategoryListFragment"
+        android:label=""
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_categoryList_to_repairAuto"
+            app:destination="@id/repairAuto"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/repairAuto"
+        android:name="com.autonomad.ui.claims.specialist_claims.home.repair_auto.RepairAutoFragment"
+        android:label="RepairAuto"
+        tools:layout="@layout/fragment_claims_specialist_repair_auto">
+        <action
+            android:id="@+id/action_repairAuto_to_detailClaim"
+            app:destination="@id/detailClaim"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailClaim"
+        android:name="com.autonomad.ui.claims.specialist_claims.home.detail.DetailClaimFragment"
+        android:label="DetailClaim"
+        tools:layout="@layout/fragment_claims_specialist_detail_claim" />
+    <fragment
+        android:id="@+id/specialist_profile"
+        android:name="com.autonomad.ui.claims.specialist_claims.settings.profile.ProfileFragment"
+        android:label=""
+        tools:layout="@layout/fragment_claims_specialist_profile">
+        <action
+            android:id="@+id/action_specialist_profile_to_specialist_add_offer"
+            app:destination="@id/specialist_add_offer"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_specialist_profile_to_add_offer_image"
+            app:destination="@id/specialist_add_offer_image"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/specialist_add_offer"
+        android:name="com.autonomad.ui.claims.specialist_claims.settings.add_offer.AddOfferFragment"
+        android:label=""
+        tools:layout="@layout/fragment_claims_specialist_add_offer" />
+    <fragment
+        android:id="@+id/specialist_add_offer_image"
+        android:name="com.autonomad.ui.claims.specialist_claims.settings.add_offer_image.AddOfferImageFragment"
+        android:label=""
+        tools:layout="@layout/fragment_claims_specialist_add_offer_image" />
+    <fragment
+        android:id="@+id/claim_specialist_support"
+        android:name="com.autonomad.ui.claims.specialist_claims.settings.SupportFragment"
+        android:label=""
+        tools:layout="@layout/fragment_claims_specialist_support">
+        <action
+            android:id="@+id/action_claim_specialist_support_to_contact"
+            app:destination="@id/claim_specialist_contacts"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/claim_specialist_contacts"
+        android:name="com.autonomad.ui.claims.specialist_claims.settings.ContactUsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_claims_specialist_contact_us" />
+    <fragment
+        android:id="@+id/claim_specialist_statistics"
+        android:name="com.autonomad.ui.claims.specialist_claims.settings.statistics.StatisticsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_claims_specialist_statistics" />
+    <fragment
+        android:id="@+id/claim_specialist_tariffs"
+        android:name="com.autonomad.ui.claims.specialist_claims.settings.tariffs.TariffsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_claims_specialist_tariffs" />
+
+    <fragment
+        android:id="@+id/payment"
+        android:name="com.autonomad.ui.check_auto.report.Payment"
+        android:label="Payment"
+        tools:layout="@layout/fragment_check_auto_payment">
+        <action
+            android:id="@+id/action_payment_to_detailTicket"
+            app:destination="@id/detailTicket"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryList"
+        android:name="com.autonomad.ui.claims.user_claims.home.mycategory.CategoryList"
+        android:label="fragment_category_list_spec"
+        tools:layout="@layout/fragment_category_list_spec">
+        <action
+            android:id="@+id/action_claim_user_categoylist_to_detailCategPageOne"
+            app:destination="@id/detailCategPage1"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailCategPage1"
+        android:name="com.autonomad.ui.claims.user_claims.home.mycategory.DetailCategPage1"
+        android:label="DetailCategPage1"
+        tools:layout="@layout/fragment_claims_detail_categ_page">
+        <action
+            android:id="@+id/action_claim_user_home_to_detailMaster"
+            app:destination="@id/detailMaster"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClaim1"
+        android:name="com.autonomad.ui.claims.user_claims.claims.claimone.CreateClaim1"
+        android:label="CreateClaim1">
+        <action
+            android:id="@+id/action_claimone_to_twoclaim"
+            app:destination="@id/createClaim2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClaim2"
+        android:name="com.autonomad.ui.claims.user_claims.claims.claimoneone.CreateClaim2"
+        android:label="CreateClaim2">
+        <action
+            android:id="@+id/action_claimtwo_to_twomainclaim"
+            app:destination="@id/createClaimMain2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClaimMain2"
+        android:name="com.autonomad.ui.claims.user_claims.claims.claimtwo.CreateClaimMain2"
+        android:label="CreateClaimMain2">
+        <action
+            android:id="@+id/action_claimtwomain_to_threeclaim"
+            app:destination="@id/createClaim3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClaim3"
+        android:name="com.autonomad.ui.claims.user_claims.claims.claimthree.CreateClaim3"
+        android:label="CreateClaim3">
+        <action
+            android:id="@+id/action_claimthree_to_fourclaim"
+            app:destination="@id/createClaim4"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_claimthree_to_address"
+            app:destination="@id/fragment_settings_addresses"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClaim4"
+        android:name="com.autonomad.ui.claims.user_claims.claims.claimfour.CreateClaimFour"
+        android:label="CreateClaim4">
+        <action
+            android:id="@+id/four_main"
+            app:destination="@id/claim_user_claims"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/penalty_premium"
+        android:name="com.autonomad.ui.penalty.penalty_premium.PenaltyPremiumFragment"
+        android:label="Премиум">
+        <action
+            android:id="@+id/action_penalty_premium_to_penalty"
+            app:destination="@id/penalty"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailClaim2"
+        android:name="com.autonomad.ui.claims.user_claims.claims.detail_claims.DetailClaim"
+        android:label="DetailClaim"
+        tools:layout="@layout/fragment_detail_of_claims">
+        <action
+            android:id="@+id/detail_claimtwo_rate"
+            app:destination="@id/rate"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/detail_claimtwo_detailClaim"
+            app:destination="@id/detailClaim"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_detailClaim2_to_createClaim2"
+            app:destination="@id/createClaim2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/carsPageDetail"
+        android:name="com.autonomad.ui.profile.avto_profile.CarsPageDetail"
+        android:label="CarsPageDetail">
+        <action
+            android:id="@+id/action_cars_pagedetail_to_report"
+            app:destination="@id/report"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/driversPageDetail"
+        android:name="com.autonomad.ui.profile.driver_profile.DriversPageDetail"
+        android:label="DriversPageDetail">
+        <action
+            android:id="@+id/action_drivpage_to_penaltiesOfPerson"
+            app:destination="@id/penaltiesOfPerson"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankSpisok"
+        android:name="com.autonomad.ui.profile.settings.BankCard.BankSpisok"
+        android:label="BankSpisok">
+        <action
+            android:id="@+id/action_bankSpisok_to_bankingCardAdd"
+            app:destination="@id/bankingCardAdd"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/documentSett"
+        android:name="com.autonomad.ui.profile.settings.Document.DocumentSett"
+        android:label="DocumentSett">
+        <action
+            android:id="@+id/documentSett_newdok"
+            app:destination="@id/newDocument"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePass"
+        android:name="com.autonomad.ui.profile.settings.change_pass.ChangePass"
+        android:label="ChangePass" />
+    <!--    <dialog-->
+    <!--        android:id="@+id/addVoditel"-->
+    <!--        android:name="com.example.autonomad.ui.bottom_sheet.penalty.AddVoditel"-->
+    <!--        android:label="AddVoditel" >-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_dialog_to_penaltyPerson"-->
+    <!--            app:destination="@id/penaltiesOfPerson"-->
+    <!--            app:enterAnim="@anim/slide_in_right"-->
+    <!--            app:exitAnim="@anim/slide_out_left"-->
+    <!--            app:popEnterAnim="@anim/slide_in_left"-->
+    <!--            app:popExitAnim="@anim/slide_out_right" />-->
+    <!--    </dialog>-->
+
+
+    <!--TODO SHOP SECTION START-->
+    <fragment
+        android:id="@+id/shop_home"
+        android:name="com.autonomad.ui.shop.home.ShopHomeFragment"
+        tools:layout="@layout/fragment_shop_home">
+        <action
+            android:id="@+id/action_shop_home_to_services"
+            app:destination="@id/services"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shop_home_to_shop_products"
+            app:destination="@id/shop_product"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shop_home_to_shop_category"
+            app:destination="@id/shop_category"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shop_home_to_claim_specialist_contacts"
+            app:destination="@id/claim_specialist_contacts"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/shop_basket"
+        android:name="com.autonomad.ui.shop.basket.ShopBasketFragment"
+        tools:layout="@layout/fragment_shop_basket">
+        <action
+            android:id="@+id/action_shop_basket_to_shop_home"
+            app:destination="@id/shop_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/shop_settings"
+        android:name="com.autonomad.ui.shop.settings.ShopSettings"
+        tools:layout="@layout/fragment_shop_settings">
+        <action
+            android:id="@+id/action_shop_settings_to_shop_home"
+            app:destination="@id/shop_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shop_settings_to_shop_fav_products"
+            app:destination="@id/shop_fav_products"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shop_settings_to_shop_orders"
+            app:destination="@id/shop_orders"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shop_settings_to_claim_specialist_contacts"
+            app:destination="@id/claim_specialist_contacts"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/shop_product"
+        android:name="com.autonomad.ui.shop.product.ShopProductFragment"
+        tools:layout="@layout/fragment_shop_product">
+        <action
+            android:id="@+id/action_shop_product_to_shop_home"
+            app:destination="@id/shop_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shop_products_to_shop_products_by_category"
+            app:destination="@id/shop_products_by_category"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/shop_category"
+        android:name="com.autonomad.ui.shop.category.ShopCategoryFragment"
+        tools:layout="@layout/fragment_shop_category">
+        <action
+            android:id="@+id/action_shop_category_to_shop_home"
+            app:destination="@id/shop_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shop_category_to_shop_products_by_category"
+            app:destination="@id/shop_products_by_category"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shop_products_by_category"
+        android:name="com.autonomad.ui.shop.category.ProductsByCategoryFragment"
+        tools:layout="@layout/fragment_shop_products_by_category">
+        <action
+            android:id="@+id/action_shop_products_by_category_to_shop_category"
+            app:destination="@id/shop_category"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shop_products_by_category_to_shop_product"
+            app:destination="@id/shop_product"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/shop_orders"
+        android:name="com.autonomad.ui.shop.orders.ShopOrdersFragment"
+        tools:layout="@layout/fragment_shop_orders">
+        <action
+            android:id="@+id/action_shop_orders_to_shop_settings"
+            app:destination="@id/shop_settings"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/shop_order_details"
+        android:name="com.autonomad.ui.shop.orders.ShopOrdersDetailsFragment"
+        tools:layout="@layout/fragment_shop_order_details">
+    </fragment>
+    <fragment
+        android:id="@+id/shop_fav_products"
+        android:name="com.autonomad.ui.shop.fav.ShopFavProductsFragment"
+        tools:layout="@layout/fragment_shop_fav_products">
+        <action
+            android:id="@+id/action_shop_fav_products_to_shop_settings"
+            app:destination="@id/shop_settings"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <!--TODO SHOP SECTION END-->
+
+</navigation>

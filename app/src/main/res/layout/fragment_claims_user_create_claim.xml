@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/ic_exit"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_default_exit" />
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/White"
+            android:hint="Опишите проблему"
+            android:padding="16dp"
+            android:textColor="@color/grey_2"
+            android:textColorHint="@color/grey_4" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/ProgressColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Категория работы"
+            android:textColor="@color/grey_4"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:drawableStart="@drawable/ic_claim_create_claim_1"
+            android:drawablePadding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/White"
+            android:hint="Категория"
+            android:padding="16dp"
+            android:textColor="@color/grey_2"
+            android:textColorHint="@color/grey_4" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/ProgressColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Фото"
+            android:textColor="@color/grey_4"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/images_rv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Адрес"
+            android:textColor="@color/grey_4"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:drawableStart="@drawable/ic_claim_create_claim_2"
+            android:drawablePadding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/White"
+            android:hint="Напишите адрес"
+            android:padding="16dp"
+            android:textColor="@color/grey_2"
+            android:textColorHint="@color/grey_4" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/ProgressColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Дата и время"
+            android:textColor="@color/grey_4"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:drawableStart="@drawable/ic_claim_create_claim_3"
+            android:drawablePadding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/White"
+            android:hint="Дата и время"
+            android:padding="16dp"
+            android:textColor="@color/grey_2"
+            android:textColorHint="@color/grey_4" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/ProgressColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Бюджет"
+            android:textColor="@color/grey_4"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:drawableStart="@drawable/ic_claim_create_claim_4"
+            android:drawablePadding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/White"
+            android:hint="Сумма ₸"
+            android:padding="16dp"
+            android:textColor="@color/grey_2"
+            android:textColorHint="@color/grey_4" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/background_blue_rectangle"
+            android:gravity="center"
+            android:text="Отправить"
+            android:textColor="@color/grey_9"
+            android:textFontWeight="500"
+            android:textSize="18sp" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

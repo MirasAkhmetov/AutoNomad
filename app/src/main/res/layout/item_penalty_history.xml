@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.penalty.PaymentHistory" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_8"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            app:oldDateString="@{itemData.order.createdDate}"
+            app:newPattern="@{`dd.MM.yyyy`}"
+            android:textColor="@color/grey_4"
+            android:textSize="14sp"
+            android:visibility="@{safeUnbox(itemData.show)?View.VISIBLE:View.GONE}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:id="@+id/text_vin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="Номер материала"
+                android:textColor="@color/grey_4"
+                android:textFontWeight="400"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/vin_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/text_vin"
+                android:text="@{itemData.actNum}"
+                android:textColor="@color/Black"
+                android:textFontWeight="400"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vin_id"
+                android:layout_marginTop="8dp"
+                android:text="@{@string/price(itemData.order.paid)}"
+                android:textColor="@color/Black"
+                android:textFontWeight="600"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_default_next" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

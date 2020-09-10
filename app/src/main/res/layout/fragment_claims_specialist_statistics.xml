@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:padding="16dp"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.claims.specialist_claims.settings.statistics.StatisticsFragment">
+
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_default_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Статистика"
+            android:textColor="@color/grey_3"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+        <TextView
+            android:id="@+id/lbl_views"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="Просмотры анкеты"
+            android:textColor="@color/grey_2"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+        <TextView
+            android:id="@+id/tv_view_day_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_view_day_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lbl_views" />
+
+        <TextView
+            android:id="@+id/tv_view_day_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_view_day_3"
+            app:layout_constraintStart_toEndOf="@id/tv_view_day_1"
+            app:layout_constraintTop_toTopOf="@id/tv_view_day_1" />
+
+        <TextView
+            android:id="@+id/tv_view_day_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_view_day_4"
+            app:layout_constraintStart_toEndOf="@id/tv_view_day_2"
+            app:layout_constraintTop_toTopOf="@id/tv_view_day_1" />
+
+        <TextView
+            android:id="@+id/tv_view_day_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_view_day_5"
+            app:layout_constraintStart_toEndOf="@id/tv_view_day_3"
+            app:layout_constraintTop_toTopOf="@id/tv_view_day_1" />
+
+        <TextView
+            android:id="@+id/tv_view_day_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_view_day_6"
+            app:layout_constraintStart_toEndOf="@id/tv_view_day_4"
+            app:layout_constraintTop_toTopOf="@id/tv_view_day_1" />
+
+        <TextView
+            android:id="@+id/tv_view_day_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_view_day_7"
+            app:layout_constraintStart_toEndOf="@+id/tv_view_day_5"
+            app:layout_constraintTop_toTopOf="@id/tv_view_day_1" />
+
+        <TextView
+            android:id="@+id/tv_view_day_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_view_day_6"
+            app:layout_constraintTop_toTopOf="@id/tv_view_day_1" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_day_1"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            app:cardBackgroundColor="@color/grey_7"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_view_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_view_day_2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_day_2"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_7"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_view_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_view_day_3"
+            app:layout_constraintStart_toEndOf="@id/card_view_day_1" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_day_3"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_7"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_view_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_view_day_4"
+            app:layout_constraintStart_toEndOf="@id/card_view_day_2" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_day_4"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_7"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_view_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_view_day_5"
+            app:layout_constraintStart_toEndOf="@id/card_view_day_3" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_day_5"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_7"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_view_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_view_day_6"
+            app:layout_constraintStart_toEndOf="@id/card_view_day_4" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_day_6"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_7"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_view_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_view_day_7"
+            app:layout_constraintStart_toEndOf="@id/card_view_day_5" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_day_7"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_7"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_view_day_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/card_view_day_6" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_cards_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="card_view_day_4,card_view_day_5,card_view_day_2,card_view_day_7,card_view_day_3,card_view_day_1,card_view_day_6"
+            tools:layout_editor_absoluteX="379dp" />
+
+        <TextView
+            android:id="@+id/tv_view_count_day_1"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_view"
+            app:layout_constraintEnd_toEndOf="@id/card_view_day_1"
+            app:layout_constraintStart_toStartOf="@id/card_view_day_1" />
+
+        <TextView
+            android:id="@+id/tv_view_count_day_2"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_view"
+            app:layout_constraintEnd_toEndOf="@id/card_view_day_2"
+            app:layout_constraintStart_toStartOf="@id/card_view_day_2" />
+
+        <TextView
+            android:id="@+id/tv_view_count_day_3"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_view"
+            app:layout_constraintEnd_toEndOf="@id/card_view_day_3"
+            app:layout_constraintStart_toStartOf="@id/card_view_day_3" />
+
+        <TextView
+            android:id="@+id/tv_view_count_day_4"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_view"
+            app:layout_constraintEnd_toEndOf="@id/card_view_day_4"
+            app:layout_constraintStart_toStartOf="@id/card_view_day_4" />
+
+        <TextView
+            android:id="@+id/tv_view_count_day_5"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_view"
+            app:layout_constraintEnd_toEndOf="@id/card_view_day_5"
+            app:layout_constraintStart_toStartOf="@id/card_view_day_5" />
+
+        <TextView
+            android:id="@+id/tv_view_count_day_6"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_view"
+            app:layout_constraintEnd_toEndOf="@id/card_view_day_6"
+            app:layout_constraintStart_toStartOf="@id/card_view_day_6" />
+
+        <TextView
+            android:id="@+id/tv_view_count_day_7"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_view"
+            app:layout_constraintEnd_toEndOf="@id/card_view_day_7"
+            app:layout_constraintStart_toStartOf="@id/card_view_day_7" />
+
+        <ImageView
+            android:id="@+id/iv_views"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_view_day_1" />
+
+        <TextView
+            android:id="@+id/tv_views_count_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/grey_3"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_views"
+            app:layout_constraintStart_toEndOf="@id/iv_views"
+            app:layout_constraintTop_toTopOf="@id/iv_views" />
+
+        <TextView
+            android:id="@+id/tv_views_count_weekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_views_count_total"
+            app:layout_constraintStart_toEndOf="@id/tv_views_count_total" />
+
+        <TextView
+            android:id="@+id/lbl_responses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="Ваши отклики"
+            android:textColor="@color/grey_2"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_views" />
+
+        <TextView
+            android:id="@+id/tv_responses_day_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="106dp"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_responses_day_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lbl_responses" />
+
+        <TextView
+            android:id="@+id/tv_responses_day_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_responses_day_3"
+            app:layout_constraintStart_toEndOf="@id/tv_responses_day_1"
+            app:layout_constraintTop_toTopOf="@id/tv_responses_day_1" />
+
+        <TextView
+            android:id="@+id/tv_responses_day_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_responses_day_4"
+            app:layout_constraintStart_toEndOf="@id/tv_responses_day_2"
+            app:layout_constraintTop_toTopOf="@id/tv_responses_day_1" />
+
+        <TextView
+            android:id="@+id/tv_responses_day_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_responses_day_5"
+            app:layout_constraintStart_toEndOf="@id/tv_responses_day_3"
+            app:layout_constraintTop_toTopOf="@id/tv_responses_day_1" />
+
+        <TextView
+            android:id="@+id/tv_responses_day_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_responses_day_6"
+            app:layout_constraintStart_toEndOf="@id/tv_responses_day_4"
+            app:layout_constraintTop_toTopOf="@id/tv_responses_day_1" />
+
+        <TextView
+            android:id="@+id/tv_responses_day_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_responses_day_7"
+            app:layout_constraintStart_toEndOf="@+id/tv_responses_day_5"
+            app:layout_constraintTop_toTopOf="@id/tv_responses_day_1" />
+
+        <TextView
+            android:id="@+id/tv_responses_day_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pn"
+            android:textAlignment="center"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_responses_day_6"
+            app:layout_constraintTop_toTopOf="@id/tv_responses_day_1" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_responses_day_1"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            app:cardBackgroundColor="@color/grey_5"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_responses_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_responses_day_2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_responses_day_2"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_5"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_responses_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_responses_day_3"
+            app:layout_constraintStart_toEndOf="@id/card_responses_day_1" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_responses_day_3"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_5"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_responses_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_responses_day_4"
+            app:layout_constraintStart_toEndOf="@id/card_responses_day_2" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_responses_day_4"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_5"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_responses_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_responses_day_5"
+            app:layout_constraintStart_toEndOf="@id/card_responses_day_3" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_responses_day_5"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_5"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_responses_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_responses_day_6"
+            app:layout_constraintStart_toEndOf="@id/card_responses_day_4" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_responses_day_6"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_5"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_responses_day_1"
+            app:layout_constraintEnd_toStartOf="@id/card_responses_day_7"
+            app:layout_constraintStart_toEndOf="@id/card_responses_day_5" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_responses_day_7"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+            app:cardBackgroundColor="@color/grey_5"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_responses_day_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/card_responses_day_6" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_cards_responses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="card_responses_day_4,card_responses_day_2,card_responses_day_1,card_responses_day_6,card_responses_day_7,card_responses_day_3,card_responses_day_5"
+            tools:layout_editor_absoluteY="525dp" />
+
+        <TextView
+            android:id="@+id/tv_responses_count_day_1"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_responses"
+            app:layout_constraintEnd_toEndOf="@id/card_responses_day_1"
+            app:layout_constraintStart_toStartOf="@id/card_responses_day_1" />
+
+        <TextView
+            android:id="@+id/tv_responses_count_day_2"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_responses"
+            app:layout_constraintEnd_toEndOf="@id/card_responses_day_2"
+            app:layout_constraintStart_toStartOf="@id/card_responses_day_2" />
+
+        <TextView
+            android:id="@+id/tv_responses_count_day_3"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_responses"
+            app:layout_constraintEnd_toEndOf="@id/card_responses_day_3"
+            app:layout_constraintStart_toStartOf="@id/card_responses_day_3" />
+
+        <TextView
+            android:id="@+id/tv_responses_count_day_4"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_responses"
+            app:layout_constraintEnd_toEndOf="@id/card_responses_day_4"
+            app:layout_constraintStart_toStartOf="@id/card_responses_day_4" />
+
+        <TextView
+            android:id="@+id/tv_responses_count_day_5"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_responses"
+            app:layout_constraintEnd_toEndOf="@id/card_responses_day_5"
+            app:layout_constraintStart_toStartOf="@id/card_responses_day_5" />
+
+        <TextView
+            android:id="@+id/tv_responses_count_day_6"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_responses"
+            app:layout_constraintEnd_toEndOf="@id/card_responses_day_6"
+            app:layout_constraintStart_toStartOf="@id/card_responses_day_6" />
+
+        <TextView
+            android:id="@+id/tv_responses_count_day_7"
+            android:textSize="15sp"
+            android:textColor="@color/grey_4"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/barrier_cards_responses"
+            app:layout_constraintEnd_toEndOf="@id/card_responses_day_7"
+            app:layout_constraintStart_toStartOf="@id/card_responses_day_7" />
+
+        <ImageView
+            android:id="@+id/iv_responses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_check_circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_responses_day_1" />
+
+        <TextView
+            android:id="@+id/tv_responses_count_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/grey_3"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_responses"
+            app:layout_constraintStart_toEndOf="@id/iv_responses"
+            app:layout_constraintTop_toTopOf="@+id/iv_responses" />
+
+        <TextView
+            android:id="@+id/tv_responses_count_weekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:textColor="@color/grey_4"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_responses_count_total"
+            app:layout_constraintStart_toEndOf="@+id/tv_responses_count_total"
+            app:layout_constraintTop_toTopOf="@+id/tv_responses_count_total" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

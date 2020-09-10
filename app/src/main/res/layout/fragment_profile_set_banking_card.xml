@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_default_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/settings"
+            android:textColor="@color/black_grey"
+            android:textFontWeight="400"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/background_grey_8_16dp_rectangle"
+            android:gravity="center_vertical"
+            android:hint="Номер карты"
+            android:inputType="number"
+            android:maxLength="16"
+            android:paddingStart="16dp"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="500"
+            android:textSize="14sp"
+            tools:targetApi="p" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:weightSum="2">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_grey_8_16dp_rectangle"
+                android:gravity="center_vertical"
+                android:hint="ММ/ГГ"
+                android:inputType="number"
+                android:maxLength="4"
+                android:paddingStart="16dp"
+                android:textColor="@color/grey_2"
+                android:textFontWeight="500"
+                android:textSize="14sp"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_grey_8_16dp_rectangle"
+                android:gravity="center_vertical"
+                android:hint="CVV"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingStart="16dp"
+                android:textColor="@color/grey_2"
+                android:textFontWeight="500"
+                android:textSize="14sp"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_banking_card_visa" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/add_banking_card"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/background_blue_rectangle"
+        android:gravity="center"
+        android:text="Продолжить"
+        android:textColor="@color/grey_9"
+        android:textFontWeight="500"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

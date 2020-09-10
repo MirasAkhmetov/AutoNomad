@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.penalty.penalty_receipt.PenaltyCheckViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White"
+        tools:targetApi="p">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{viewmodel.result.loading ? View.VISIBLE : View.GONE}" />
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_default_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:visibility="@{viewmodel.result.item != null ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Квитанция"
+                android:textColor="@color/Black"
+                android:textFontWeight="400"
+                android:textSize="24sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/background_white_with_grey7_line">
+
+                <ImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/grey_2"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:newPattern="@{`dd.MM.yyyy`}"
+                    app:oldDateString="@{viewmodel.result.item.order.createdDate}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/grey_2"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_date"
+                    app:newPattern="@{`HH:mm`}"
+                    app:oldDateString="@{viewmodel.result.item.order.createdDate}"
+                    app:pattern="@{`yyyy-MM-dd'T'HH:mm`}" />
+
+                <TextView
+                    android:id="@+id/lbl_payments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="1dp"
+                    android:background="@color/grey_8"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:text="История платежа штрафа"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="600"
+                    android:textSize="17sp"
+                    app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+                <TextView
+                    android:id="@+id/lbl_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="№ квитанции :"
+                    android:textColor="@color/grey_4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_payments" />
+
+                <TextView
+                    android:id="@+id/lbl_knp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:maxWidth="160dp"
+                    android:text="Код назначения платежа : "
+                    android:textColor="@color/grey_4"
+                    app:layout_constraintEnd_toEndOf="@id/guideline"
+                    app:layout_constraintStart_toStartOf="@id/lbl_id"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_id" />
+
+                <TextView
+                    android:id="@+id/lbl_payment_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="Итого оплачено :"
+                    android:textColor="@color/grey_4"
+                    app:layout_constraintStart_toStartOf="@id/lbl_knp"
+                    app:layout_constraintTop_toBottomOf="@id/barrier_knp" />
+
+                <TextView
+                    android:id="@+id/lbl_fio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="ФИО покупателя :"
+                    android:textColor="@color/grey_4"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/lbl_payment_size"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_payment_size" />
+
+                <TextView
+                    android:id="@+id/lbl_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Оплачено с :"
+                    android:textColor="@color/grey_4"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/lbl_fio"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_fio" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier_lbls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="lbl_knp,lbl_payment_size,lbl_card,lbl_fio,lbl_id"
+                    tools:layout_editor_absoluteX="379dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{String.valueOf(viewmodel.result.item.actNum)}"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/barrier_lbls"
+                    app:layout_constraintTop_toTopOf="@id/lbl_id" />
+
+                <TextView
+                    android:id="@+id/tv_knp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="913 Штрафы за нарушение законодательства Республики Казахстан"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/barrier_lbls"
+                    app:layout_constraintTop_toTopOf="@id/lbl_knp" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier_knp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="lbl_knp,tv_knp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{@string/price(viewmodel.result.item.order.paid)}"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/barrier_lbls"
+                    app:layout_constraintTop_toTopOf="@id/lbl_payment_size" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{viewmodel.result.item.name}"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/barrier_lbls"
+                    app:layout_constraintTop_toTopOf="@id/lbl_fio" />
+
+                <ImageView
+                    android:id="@+id/iv_card"
+                    cardSrc="@{viewmodel.result.item.order.pan}"
+                    android:layout_width="32dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="@id/lbl_card"
+                    app:layout_constraintStart_toEndOf="@id/barrier_lbls"
+                    app:layout_constraintTop_toTopOf="@id/lbl_card" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{viewmodel.result.item.order.pan}"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="500"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_card"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_card"
+                    app:layout_constraintTop_toTopOf="@id/iv_card" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.45" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

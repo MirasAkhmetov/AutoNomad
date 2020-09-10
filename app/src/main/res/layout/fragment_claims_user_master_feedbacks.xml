@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_default_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Отзывы"
+                android:textColor="@color/grey_3"
+                android:textFontWeight="500"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvStarAvg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="4.9"
+                        android:textColor="@color/grey_3"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvReviewCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="39 оценок"
+                        android:textColor="@color/grey_4"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCountStar5"
+                        android:layout_width="24dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        tools:text="9"
+                        android:textColor="@color/grey_4"
+                        android:textSize="14sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_horizontal5"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        tools:progress="90"
+                        android:progressDrawable="@drawable/background_progress" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_5_stars" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearLayout1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCountStar4"
+                        android:layout_width="24dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        tools:text="1"
+                        android:textColor="@color/grey_4"
+                        android:textSize="14sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_horizontal4"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        tools:progress="10"
+                        android:progressDrawable="@drawable/background_progress" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_4_stars" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearLayout2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCountStar3"
+                        android:layout_width="24dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/grey_4"
+                        android:textSize="14sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_horizontal3"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:progressDrawable="@drawable/background_progress" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_3_stars" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearLayout3"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCountStar2"
+                        android:layout_width="24dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/grey_4"
+                        android:textSize="14sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_horizontal2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:progressDrawable="@drawable/background_progress" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_2_stars" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearLayout4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCountStar1"
+                        android:layout_width="24dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/grey_4"
+                        android:textSize="14sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_horizontal1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:progressDrawable="@drawable/background_progress" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_1_star" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feedback_type_rv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feedback_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/iv_no_responses"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:adjustViewBounds="true"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_no_responses"
+            tools:ignore="ContentDescription" />
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

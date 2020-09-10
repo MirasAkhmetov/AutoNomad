@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.penalty.Driver" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/white"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:elevation="2dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="6dp"
+                android:paddingTop="14dp"
+                android:paddingRight="6dp"
+                android:paddingBottom="14dp">
+
+                <ImageView
+                    android:id="@+id/logo_of_card"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_penalty_opportunity" />
+
+                <TextView
+                    android:id="@+id/text_name_of_group1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_toStartOf="@id/properties"
+                    android:layout_toEndOf="@id/logo_of_card"
+                    android:text="@{itemData.name}"
+                    android:textColor="@color/grey_3"
+                    android:textFontWeight="500"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/description1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_name_of_group1"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toEndOf="@id/logo_of_card"
+                    android:text="@{itemData.target}"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="500"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/properties"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_profile_male" />
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+</layout>

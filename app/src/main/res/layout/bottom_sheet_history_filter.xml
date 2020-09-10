@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_rectangle_bottom_sheet"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/filter"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="600"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_reset_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="16dp"
+            android:text="@string/reset_all"
+            android:textColor="@color/Red"
+            android:textFontWeight="400" />
+
+        <ImageButton
+            android:id="@+id/ib_close"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:src="@drawable/ic_default_exit"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <Button
+        android:id="@+id/btn_apply"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_blue_rectangle"
+        android:gravity="center"
+        android:text="@string/apply"
+        android:textColor="@color/grey_9"
+        android:textFontWeight="500"
+        android:textSize="18sp" />
+</LinearLayout>

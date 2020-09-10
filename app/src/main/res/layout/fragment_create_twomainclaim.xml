@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/ic_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_default_exit" />
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_toLeftOf="@id/txt2"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:background="@drawable/ic_checkbox_checked"
+                android:textColor="@color/white"
+                android:textFontWeight="500"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_toLeftOf="@id/txt3"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:background="@drawable/background_round_blacknomer"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textFontWeight="500"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_toLeftOf="@id/txt4"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:background="@drawable/background_round_nomer"
+                android:text="3"
+                android:textColor="@color/grey_6"
+                android:textFontWeight="500"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/txt4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:background="@drawable/background_round_nomer"
+                android:text="4"
+                android:textColor="@color/grey_6"
+                android:textFontWeight="500"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавьте описание"
+            android:textColor="@color/grey_3"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:textSize="21sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_title"
+                android:padding="16dp"
+                app:hintTextAppearance="@style/MyHintStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey_2"
+                android:textColorHint="@color/grey_4"
+                android:hint="Название заказа*" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_descrip"
+                android:padding="16dp"
+                app:hintTextAppearance="@style/MyHintStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey_2"
+                android:textColorHint="@color/grey_4"
+                android:hint="Описание заказа*" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Фото"
+            android:textColor="@color/grey_4"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_images"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="4dp"
+            android:clipToPadding="true"
+            android:paddingTop="16dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:text="Бюджет*"
+            android:textColor="@color/grey_4"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edit_budzhet"
+            android:drawableStart="@drawable/ic_claim_create_claim_4"
+            android:drawablePadding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/White"
+            android:inputType="number"
+            android:hint="Сумма ₸"
+            android:padding="16dp"
+            android:textColor="@color/grey_2"
+            android:textColorHint="@color/grey_4" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbNegotiable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_3"
+            android:layout_marginStart="16dp"
+            android:text="@string/negotiable" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/ProgressColor" />
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="6dp">
+
+            <Button
+                android:id="@+id/btn_next_claim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_blue_rectangle"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/proggr"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

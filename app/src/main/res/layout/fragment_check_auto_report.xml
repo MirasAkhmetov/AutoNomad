@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.autonomad.ui.check_auto.report.CheckState" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.check_auto.report.ReportViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White">
+
+        <ProgressBar
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:visibility="@{safeUnbox(viewmodel.loading) ? View.VISIBLE : View.GONE}" />
+
+        <ImageButton
+            android:id="@+id/ic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_default_back" />
+
+        <androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:visibility="@{viewmodel.loading ? View.GONE : View.VISIBLE}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Отчет"
+                    android:textColor="@color/grey_2"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Автомобиль"
+                    android:textColor="@color/grey_4"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_white_with_light_grey_line_4dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Марка"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewmodel.carInfo.mark}"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        tools:targetApi="p" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Модель"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewmodel.carInfo.model}"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        tools:targetApi="p" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Характеристика"
+                    android:textColor="@color/grey_4"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_white_with_light_grey_line_4dp"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Вид транспортного средства"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewmodel.carInfo.car_info.vehicle_category}"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        tools:targetApi="p" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Страна производитель"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewmodel.carInfo.car_info.origin_country}"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        tools:targetApi="p" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Цвет"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewmodel.carInfo.car_info.color}"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        tools:targetApi="p" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Мощность мотора, л.с."
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewmodel.carInfo.car_info.engine_power_kwt}"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        tools:targetApi="p" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Допустимая полная масса, кг"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewmodel.carInfo.car_info.plated_weight}"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        tools:targetApi="p" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Объем двигателя, куб.см"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewmodel.carInfo.car_info.engine_volume}"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        tools:targetApi="p" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Масса, кг"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@{viewmodel.carInfo.car_info.empty_weight}"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        tools:targetApi="p" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@{@string/dtp_count(viewmodel.detailTicket.report.car_dtps.size())}"
+                    android:textColor="@color/grey_1"
+                    android:textSize="16sp"
+                    android:visibility="@{safeUnbox(viewmodel.dtpState == CheckState.BOUGHT) ? View.VISIBLE : View.GONE}" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_dtps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_white_with_light_grey_line_4dp"
+                    android:visibility="@{safeUnbox(viewmodel.dtpState == CheckState.BOUGHT) ? View.VISIBLE : View.GONE}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@{@string/history_count(viewmodel.detailTicket.report.car_histories.size())}"
+                    android:textColor="@color/grey_1"
+                    android:textSize="16sp"
+                    android:visibility="@{safeUnbox(viewmodel.historyState == CheckState.BOUGHT) ? View.VISIBLE : View.GONE}" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_histories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_white_with_light_grey_line_4dp"
+                    android:visibility="@{safeUnbox(viewmodel.historyState == CheckState.BOUGHT) ? View.VISIBLE : View.GONE }"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Наличие ДТП"
+                    android:textColor="@color/situational_red_error"
+                    android:textSize="16sp"
+                    android:visibility="@{safeUnbox(viewmodel.dtpState == CheckState.EXISTS) ? View.VISIBLE : View.GONE}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_white_with_light_grey_line_4dp"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="@{safeUnbox(viewmodel.dtpState == CheckState.EXISTS) ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Дата ДТП"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:text="*************"
+                        android:textColor="@color/grey_2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Описание"
+                        android:textColor="@color/grey_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:text="*************"
+                        android:textColor="@color/grey_2" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="История Перерегистрации"
+                    android:textColor="@color/situational_red_error"
+                    android:textSize="16sp"
+                    android:visibility="@{safeUnbox(viewmodel.historyState == CheckState.EXISTS) ? View.VISIBLE : View.GONE}" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_white_with_light_grey_line_4dp"
+                    android:padding="10dp"
+                    android:visibility="@{safeUnbox(viewmodel.historyState == CheckState.EXISTS) ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:id="@+id/lbl_action_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Действие"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintEnd_toStartOf="@id/lbl_type_1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lbl_type_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Тип"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintEnd_toStartOf="@id/lbl_date_1"
+                        app:layout_constraintStart_toEndOf="@id/lbl_action_1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lbl_date_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Дата снятия"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/lbl_type_1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_action_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:text="*******"
+                        android:textColor="@color/grey_2"
+                        app:layout_constraintEnd_toStartOf="@id/tv_type_1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lbl_action_1" />
+
+                    <TextView
+                        android:id="@+id/tv_type_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="*******"
+                        android:textColor="@color/grey_2"
+                        app:layout_constraintEnd_toStartOf="@id/tv_date_1"
+                        app:layout_constraintStart_toEndOf="@id/tv_action_1"
+                        app:layout_constraintTop_toTopOf="@id/tv_action_1" />
+
+                    <TextView
+                        android:id="@+id/tv_date_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="*******"
+                        android:textColor="@color/grey_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_type_1"
+                        app:layout_constraintTop_toTopOf="@id/tv_action_1" />
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/light_grey"
+                        app:layout_constraintTop_toBottomOf="@id/tv_action_1" />
+
+                    <TextView
+                        android:id="@+id/lbl_action_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Действие"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintEnd_toStartOf="@id/lbl_type_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+                    <TextView
+                        android:id="@+id/lbl_type_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Тип"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintEnd_toStartOf="@id/lbl_date_2"
+                        app:layout_constraintStart_toEndOf="@id/lbl_action_2"
+                        app:layout_constraintTop_toTopOf="@id/lbl_action_2" />
+
+                    <TextView
+                        android:id="@+id/lbl_date_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Дата снятия"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/lbl_type_2"
+                        app:layout_constraintTop_toTopOf="@id/lbl_action_2" />
+
+                    <TextView
+                        android:id="@+id/tv_action_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:text="*******"
+                        android:textColor="@color/grey_2"
+                        app:layout_constraintEnd_toStartOf="@id/tv_type_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lbl_action_2" />
+
+                    <TextView
+                        android:id="@+id/tv_type_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="*******"
+                        android:textColor="@color/grey_2"
+                        app:layout_constraintEnd_toStartOf="@id/tv_date_2"
+                        app:layout_constraintStart_toEndOf="@id/tv_action_2"
+                        app:layout_constraintTop_toTopOf="@id/tv_action_2" />
+
+                    <TextView
+                        android:id="@+id/tv_date_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="*******"
+                        android:textColor="@color/grey_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_type_2"
+                        app:layout_constraintTop_toTopOf="@id/tv_action_2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/background_grey_8_16dp_rectangle"
+                    android:drawableStart="@drawable/ic_warning"
+                    android:gravity="center"
+                    android:paddingHorizontal="26dp"
+                    android:paddingVertical="12dp"
+                    android:text="Данные о ДТП не найдены"
+                    android:textColor="@color/PrimaryBlue"
+                    android:visibility="@{safeUnbox(viewmodel.dtpState == CheckState.EMPTY) ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_grey_8_16dp_rectangle"
+                    android:drawableStart="@drawable/ic_warning"
+                    android:gravity="center"
+                    android:paddingHorizontal="26dp"
+                    android:paddingVertical="12dp"
+                    android:text="История перерегистрации не найдена"
+                    android:textColor="@color/PrimaryBlue"
+                    android:visibility="@{safeUnbox(viewmodel.historyState == CheckState.EMPTY) ? View.VISIBLE : View.GONE}" />
+
+                <LinearLayout
+                    android:id="@+id/checkbox_ll1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:visibility="@{safeUnbox(viewmodel.dtpState == CheckState.EXISTS) ? View.VISIBLE : View.GONE}">
+
+                    <CheckBox
+                        android:id="@+id/checkbox1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:buttonTint="@color/PrimaryBlue" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center"
+                        android:text="@{`Купить данные о ДТП по вашему автомобилю за `+viewmodel.carInfo.report_price+`₸`}"
+                        android:textColor="@color/grey_3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/checkbox_ll2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="16dp"
+                    android:visibility="@{safeUnbox(viewmodel.historyState == CheckState.EXISTS) ? View.VISIBLE:View.GONE}">
+
+                    <CheckBox
+                        android:id="@+id/checkbox2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:buttonTint="@color/PrimaryBlue" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center"
+                        android:text="@{`Купить историю перерегистрации по вашему автомобилю за `+viewmodel.carInfo.report_price + `₸`}"
+                        android:textColor="@color/grey_3" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/check"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginVertical="16dp"
+                    android:background="@drawable/background_blue_rectangle"
+                    android:gravity="center"
+                    android:text="Готово"
+                    android:textColor="@color/grey_9"
+                    android:textFontWeight="500"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

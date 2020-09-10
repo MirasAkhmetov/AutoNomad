@@ -1,0 +1,195 @@
+<resources>
+    <string name="app_name">Auto Nomad</string>
+    <string name="main_page">Главная</string>
+    <string name="services">Сервисы</string>
+    <string name="chat">Чат</string>
+    <string name="profile">Профиль</string>
+    <string name="find">Поиск</string>
+    <string name="find_products">Поиск товаров</string>
+    <string name="story">story</string>
+    <string name="month_spending">4 995</string>
+    <string name="month_spending_text">Расходы на авто за декабрь</string>
+    <string name="Add_own_auto">Добавьте свой автомобиль</string>
+    <string name="text_under_add_own_auto">Чтобы ваш поиск был удобным</string>
+    <string name="add_auto">Добавить авто</string>
+    <string name="respond">Откликаться</string>
+    <string name="save">Сохранить</string>
+    <string name="penalty">Штрафы</string>
+    <string name="premium">Премиум</string>
+    <string name="history">История</string>
+    <string name="settings">Настройки</string>
+    <string name="exit">Выйти</string>
+    <string name="parking">Паркинг</string>
+    <string name="insurance">Страховка</string>
+    <string name="check">Проверить</string>
+    <string name="check_auto">История авто</string>
+    <string name="add_check_auto">Проверить авто</string>
+    <string name="price">%s ₸</string>
+    <string name="price_from">от %s ₸</string>
+    <string name="store">Магазин</string>
+
+    <string name="how_to_respond">Вы можете посмотреть все заявки на главной странице, а так же по категориям. Заполните анкету и ваш список услуг, чтобы мы могли Вам предлагать наиболее подходящие заявки.</string>
+    <string name="how_to_increase_requests">В нашем приложении действует рейтинговая система специалистов, просите клиентов оставлять рейтинг и отзыв. Так же наш алгоритм анализирует вашу активность.</string>
+    <string name="categories">Категории</string>
+    <string name="watch_all">Посмотреть всё</string>
+    <string name="refresh">Обновить</string>
+    <string name="reference">Источник: \"        \"</string>
+    <string name="add">Добавить</string>
+    <string name="uin">ИИН</string>
+    <string name="dtp_count">Наличие ДТП (%d)</string>
+    <string name="history_count">История Перерегистрации (%d)</string>
+    <string name="buy_dtp">Купить данные о ДТП по вашему автомобилю за %d₸</string>
+    <string name="buy_history">Купить историю перерегистрации по вашему автомобилю за %d₸</string>
+    <string name="history_not_found">История перерегистрации не найдена</string>
+    <string name="delete_response"><font fgcolor='#D71010'>Отменить заявку</font></string>
+    <string name="delete_auto"><font fgcolor='#D71010'>Удалить авто</font></string>
+    <string name="no_penalties">По данному %s штрафов <font fgcolor='#38BC38'>не обнаружено</font></string>
+    <string name="save_target">Сохранить %s</string>
+    <string name="penalties_source">Источник:            </string>
+    <string name="actual_data">Данные актуальны:           </string>
+    <string name="save_data">Сохранить данные</string>
+    <string name="not_valid">Недействителен</string>
+    <string name="valid">Действителен</string>
+    <string name="iin">ИИН</string>
+    <string name="bin">БИН</string>
+    <string name="check_polis">Проверить полис</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addresses">Адреса</string>
+    <string name="edit">Изменить</string>
+    <string name="complete">Готово</string>
+    <string name="cancel">Отменить</string>
+    <string name="more">еще %d</string>
+    <string name="cars">Автомобили</string>
+
+    <string name="userinn">С помощью ИИН Ваши данные заполняются  автоматически. К тому же, Вы получаете автоматический процесс проверки штрафов и действительности страхового полиса.</string>
+    <string name="no_responses">Вы не откликнулись на заявку</string>
+    <string name="no_active_responses">У вас нет активных заявок</string>
+    <string name="no_finished_responses">У вас нет завершенных заявок</string>
+    <string name="add_check_auto_info">Добавьте Госномер авто для проверки истории авто</string>
+    <string name="new_auto">Новое авто</string>
+    <string-array name="array_pol">
+        <item>Женский</item>
+        <item>Мужской</item>
+    </string-array>
+
+    <string name="reset_all">Сбросить все</string>
+    <string name="filter">Фильтр</string>
+    <string name="apply">Применить</string>
+
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="open">Открыть</string>
+    <string name="map_turn_on_gps_title">Отключена геопозиция. Включите, чтобы увидеть ваше местоположание на карте. Открыть настройки чтобы включить?</string>
+    <string name="map_turn_on_location_in_settings_title">Разрешение для геопозиции было отклонено. Чтобы разрешить, откройте настройки, найдите раздел Разрешения и дайте доступ к геопозиции</string>
+
+    <string name="my_insurances">Мои полисы</string>
+    <string name="check_history">История проверки</string>
+    <string name="select_city">Выберите город</string>
+    <string name="null_price">Цена не указана</string>
+    <string name="sort_by_new">Сначала новые</string>
+    <string name="sort_by_rating_ascending">По возрастанию рейтинга</string>
+    <string name="sort_by_rating_descending">По убыванию рейтинга</string>
+    <string name="sort_by_popularity_ascending">По возрастанию популярности</string>
+    <string name="sort_by_popularity_descending">По убыванию популярности</string>
+    <string name="sort_near">Рядом со мной</string>
+    <string name="sort">Сортировка</string>
+    <string name="location_not_found">Не удалось определить местоположение</string>
+    <string name="could_not_get_location_permission">Не удалось получить разрешение</string>
+
+    <string name="internet_connection_turned_off">Соединение с интернетом не установлено.\nНажмите чтобы включить</string>
+    <string name="for_all_time">за все время</string>
+    <string name="payments_for_parking">Платежи на паркинг</string>
+    <string name="rate_app">Оценить приложение</string>
+    <string name="share_with_friends">Поделиться с друзьями</string>
+    <string name="share_text">Дорогой друг! Делюсь с тобой этим прекрасным приложением. Скачивай и пользуйся услугами страхования. Кликни на ссылку: </string>
+    <string name="share_text_choose_app">Выбери одно</string>
+
+    <string name="ogpo_text">Полис ОГПО – обязательное страхование ответственности автовладельца за причинение вреда жизни, здоровью и имуществу других участников дорожного движения. Если ДТП случится по вине застрахованного, мы компенсируем вред пострадавшим.</string>
+    <string name="kasko_text_1"><![CDATA[Автомобильный транспорт, принадлежащий физическому лицу: 1) с размером страховой суммы от <b>70 000</b> до <b>150 000</b> тенге берем на страхование транспортные средства без ограничений году выпуска; 2) с размером страховой суммы от <b>200 000</b> до <b>500 000</b> тенге берем на страхование транспортные средства не старше <b>15</b> лет.]]></string>
+    <string name="kasko_text_2"><![CDATA[Страховая сумма от <b>70 000 тг</b> до <b>500 000 тг</b> Страховая премия от <b>2 500 тг</b> до <b>32 000 тг</b>]]></string>
+    <string name="kasko_text_3"><![CDATA[Срок действия договора – <b>12</b> месяцев. Договор страхования, оформленный онлаин вступает в силу со дня, следующего за днем оплаты страховой премии. Договор страхования, оформленный оффлайн вступает в силу в сроки, указанные в самом договоре. Договор страхования действует до первого страхового случая. При страховании на срок менее <b>12</b> месяцев размер страховой премии не меняется.]]></string>
+
+    <string name="vin">VIN код</string>
+    <string name="enter_vin">Укажите VIN код авто</string>
+    <string name="state_number">Госномер авто</string>
+    <string name="state_number_not_found">Мы не смогли найти ваш Госномер</string>
+    <string name="ti_not_needed">Машины с возрастом до 7 лет не нуждаются в прохождении ТехОсмотра</string>
+    <string name="phone_number_hint">+7 (___) ___ __ __</string>
+    <string name="password">Пароль</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="name">Имя</string>
+    <string name="confirm_password">Повторите пароль</string>
+    <string name="hint_enter_number">Введите номер телефона для активации аккаунта</string>
+    <string name="enter_sms_code">Введите смс-код</string>
+    <string name="resend_code">Отправить код снова через\t</string>
+    <string name="resend_code_now">Отправить код снова</string>
+    <string name="next">Далее</string>
+    <string name="receive_sms">Получить смс-код</string>
+    <string name="password_recovery">Восстановление пароля</string>
+    <string name="enter_phone_for_password_recovery">Введите номер телефона, мы отправим вам SMS-код для восстановления пароля</string>
+    <string name="account_verification">Подтверждение аккаунта</string>
+    <string name="number_not_found">Номер не найден</string>
+    <string name="new_password">Придумайте новый пароль</string>
+    <string name="password_requirements">Пароль должен состоять из:</string>
+    <string name="password_latin">Только латиница</string>
+    <string name="password_symbols_count">Минимум 8 символов</string>
+    <string name="password_capital_letter">Минимум одна заглавная буква</string>
+    <string name="password_digit">Минимум одна цифра</string>
+    <string name="password_change_complete">Пароль успешно изменен</string>
+    <string name="set_pin">Установите пин-код для быстрого доступа к приложению</string>
+    <string name="enter_pin">Введите пин-код для быстрого доступа к приложению</string>
+    <string name="current_pin">Введите текущий пин-код</string>
+    <string name="new_pin">Введите новый пин-код</string>
+    <string name="repeat_pin">Повторите пин-код</string>
+    <string name="pins_does_not_match">Введенные коды не совпадают, повторите попытку</string>
+    <string name="invalid_pin">Введен неверный пин-код\nПожалуйста повторите попытку</string>
+    <string name="enter_srts">Введите серийный номер тех паспорта</string>
+    <string name="srts">СРТС</string>
+    <string name="tariff_not_active">У вас неактивирован тариф</string>
+    <string name="tariff_name">%s - %s</string>
+    <string name="activate_promo">Активировать промокод</string>
+    <string name="payment_amount">К оплате %s ₸</string>
+    <string name="promo">Промокод</string>
+    <string name="enter_promo">Введите промокод</string>
+    <string name="buy_subscription">Купить подписку</string>
+    <string name="card_number">Номер карты</string>
+    <string name="card_expiration_hint">ММ/ГГ</string>
+    <string name="cvv">CVV</string>
+    <string name="payment_size">Сумма к оплате</string>
+    <string name="pay">Оплатить</string>
+    <string name="show_new">Новые</string>
+    <string name="fill_profile">Заполните анкету</string>
+    <string name="fill_profile_info">Чтобы откликаться на заявки, заполните анкету.</string>
+    <string name="greeting">Здравствуйте, %s!</string>
+    <string name="greeting_nameless">Здравствуйте!</string>
+    <string name="pin_info">Код быстрого доступа</string>
+
+    <string name="text_services_list">Список услуг</string>
+    <string name="text_photo_list">Фото работ</string>
+    <string name="text_photo_list_empty">Фото работ пока нет</string>
+    <string name="text_services_list_empty">Услуг пока нет</string>
+    <string name="see_all_reviews">Смотреть все отзывы</string>
+    <string name="negotiable">Договорная</string>
+    <string name="call">Позвонить</string>
+    <string name="confirm_signout">Выйти из аккаунта?</string>
+    <string name="login">Войти</string>
+    <string name="confirm_no_pin">Вы действительно не хотите устанавливать пин-код?</string>
+    <string name="delete_driver">Удалить водителя</string>
+    <string name="finish_response">Работа выполнена</string>
+    <string name="show_review">Читать отзыв клиента</string>
+    <string name="car_deleted">Авто удалено</string>
+    <string name="confirm_auto_delete">Вы уверены, что хотите удалить это авто?</string>
+    <string name="car_title">Название машины</string>
+    <string name="set_car_title">Задайте имя этому авто, для удобного пользования</string>
+    <string name="title">Название</string>
+    <string name="confirm_driver_deletion">Вы уверены, что хотите удалить этого водителя?</string>
+    <string name="car_added">Авто добавлено</string>
+    <string name="my_requests">Мои заявки</string>
+    <string name="feed">Лента</string>
+
+    <string name="fbId">123228168986972</string>
+    <style name="fb_login_prot_sch">fb123228168986972</style>
+    <string name="enter_message_text">Введите текст сообщения</string>
+    <string name="message_text_hint">Сообщение...</string>
+    <string name="today">Сегодня</string>
+</resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_small_line" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_white_with_grey7_line"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/background_grey_8_16dp_rectangle"
+                android:gravity="center_vertical"
+                android:hint="Номер карты"
+                android:paddingStart="16dp"
+                android:textColor="@color/grey_2"
+                android:textFontWeight="500"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_grey_8_16dp_rectangle"
+                    android:gravity="center_vertical"
+                    android:hint="ММ/ГГ"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="500"
+                    android:textSize="14sp"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_grey_8_16dp_rectangle"
+                    android:gravity="center_vertical"
+                    android:hint="CVV"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="500"
+                    android:textSize="14sp"
+                    tools:ignore="RtlSymmetry" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_banking_card_visa" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_banking_card"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/background_blue_rectangle"
+            android:gravity="center"
+            android:text="Продолжить"
+            android:textColor="@color/grey_9"
+            android:textFontWeight="500"
+            android:textSize="18sp" />
+    </LinearLayout>
+</FrameLayout>

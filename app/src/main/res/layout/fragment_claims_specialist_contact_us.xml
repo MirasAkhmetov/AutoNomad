@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:paddingHorizontal="16dp"
+    tools:context=".ui.claims.specialist_claims.settings.ContactUsFragment">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_default_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_have_questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="Возникли вопросы или есть предложение?"
+        android:textColor="@color/grey_2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Свяжитесь с нами по \nWhatsapp, Telegram"
+        android:textColor="@color/grey_3"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_have_questions" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="36dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_banner_contact"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+    <Button
+        android:id="@+id/btn_tg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_tg_15dp"
+        android:drawableStart="@drawable/ic_tg_btn"
+        android:paddingHorizontal="80dp"
+        android:layout_marginBottom="16dp"
+        android:text="Написать в Telegram"
+        android:textAllCaps="false"
+        android:textColor="@color/grey_9"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/btn_wpp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/background_wpp_15dp"
+        android:drawableLeft="@drawable/ic_wpp_btn"
+        android:paddingHorizontal="75dp"
+        android:text="Написать в WhatsApp"
+        android:textAllCaps="false"
+        android:textColor="@color/grey_9"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_tg" />
+</androidx.constraintlayout.widget.ConstraintLayout>

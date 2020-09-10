@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "402125178194",
+    "firebase_url": "https://app-auto-nomad.firebaseio.com",
+    "project_id": "app-auto-nomad",
+    "storage_bucket": "app-auto-nomad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402125178194:android:0d62ee8a4bf1eb2118268b",
+        "android_client_info": {
+          "package_name": "com.autonomad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402125178194-tfvf6jg78s14ns21an3ldn6c4phqoftg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB05KAYlaxiblWA2QTsWvpiI3Qo7KyRxDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402125178194-tfvf6jg78s14ns21an3ldn6c4phqoftg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "402125178194-71dv7fnnf6q14q3ka6gaog0vn3grkkt3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kz.nomad-auto.mobile"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402125178194:android:8456aaf64f5fbe5a18268b",
+        "android_client_info": {
+          "package_name": "com.project.firebasedebug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402125178194-tfvf6jg78s14ns21an3ldn6c4phqoftg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB05KAYlaxiblWA2QTsWvpiI3Qo7KyRxDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402125178194-tfvf6jg78s14ns21an3ldn6c4phqoftg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "402125178194-71dv7fnnf6q14q3ka6gaog0vn3grkkt3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kz.nomad-auto.mobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_default_exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buy_subscription"
+        android:textColor="@color/grey_2"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_card"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/background_grey_stroke_15dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_card"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <EditText
+        android:id="@+id/et_card_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_grey_8_12dp_rectangle"
+        android:hint="@string/card_number"
+        android:inputType="number"
+        android:maxLength="19"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintEnd_toEndOf="@id/view_card"
+        app:layout_constraintStart_toStartOf="@id/view_card"
+        app:layout_constraintTop_toTopOf="@id/view_card" />
+
+    <ImageView
+        android:id="@+id/iv_scan_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_card_scan"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/et_card_number"
+        app:layout_constraintEnd_toEndOf="@id/et_card_number"
+        app:layout_constraintTop_toTopOf="@id/et_card_number" />
+
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/background_grey_8_12dp_rectangle"
+        android:hint="@string/card_expiration_hint"
+        android:inputType="number"
+        android:maxLength="5"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintEnd_toStartOf="@id/et_cvv"
+        app:layout_constraintStart_toStartOf="@id/et_card_number"
+        app:layout_constraintTop_toBottomOf="@id/et_card_number"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/et_cvv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_grey_8_12dp_rectangle"
+        android:hint="@string/cvv"
+        android:inputType="numberPassword"
+        android:maxLength="3"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintEnd_toEndOf="@id/et_card_number"
+        app:layout_constraintStart_toEndOf="@id/et_date"
+        app:layout_constraintTop_toTopOf="@id/et_date" />
+
+    <ImageView
+        android:id="@+id/iv_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:paddingBottom="24dp"
+        android:src="@drawable/ic_banking_card_visa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_date" />
+
+    <TextView
+        android:id="@+id/lbl_payment_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/payment_size"
+        android:textColor="@color/grey_2"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_card" />
+
+    <TextView
+        android:id="@+id/tv_payment_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/background_grey_9_10dp_rectangle"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:textColor="@color/grey_4"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/lbl_payment_size" />
+
+    <Button
+        android:id="@+id/btn_pay"
+        style="@style/ButtonPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/pay"
+        app:layout_constraintTop_toBottomOf="@id/tv_payment_size" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationZ="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/btn_pay"
+        app:layout_constraintEnd_toEndOf="@id/btn_pay"
+        app:layout_constraintStart_toStartOf="@id/btn_pay"
+        app:layout_constraintTop_toTopOf="@id/btn_pay" />
+</androidx.constraintlayout.widget.ConstraintLayout>

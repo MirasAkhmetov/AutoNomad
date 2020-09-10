@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/shop_home"
+        android:icon="@drawable/ic_bottom_nav_home"
+        android:title="Магазин" />
+
+    <item
+        android:id="@+id/shop_basket"
+        android:icon="@drawable/ic_shop_basket"
+        android:title="Корзина" />
+
+    <item
+        android:id="@+id/shop_settings"
+        android:icon="@drawable/ic_shop_settings"
+        android:title="Настройки" />
+
+    <item
+        android:id="@+id/service_exit"
+        android:icon="@drawable/ic_bottom_nav_exit"
+        android:title="@string/exit" />
+
+</menu>

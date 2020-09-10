@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.claims.user_claims.claims.claimfour.ClaimFourViewModel" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/ic_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_default_exit" />
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_toLeftOf="@id/txt2"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:background="@drawable/ic_checkbox_checked"
+                android:textColor="@color/white"
+                android:textFontWeight="500"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_toLeftOf="@id/txt3"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:background="@drawable/ic_checkbox_checked"
+                android:textColor="@color/grey_6"
+                android:textFontWeight="500"
+                android:textSize="12sp" />
+            <ImageView
+                android:id="@+id/txt3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_toLeftOf="@id/txt4"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/ic_checkbox_checked"
+                android:textColor="@color/grey_6"
+                android:textFontWeight="500" />
+            <TextView
+                android:id="@+id/txt4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:background="@drawable/background_round_blacknomer"
+                android:text="4"
+                android:textColor="@color/grey_6"
+                android:textFontWeight="500"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/White">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true"
+                android:visibility="@{safeUnbox(viewmodel.dataLoading) ? View.VISIBLE : View.GONE}" />
+        </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="@{safeUnbox(viewmodel.dataLoading) ? View.GONE: View.VISIBLE}">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выберите ТС"
+            android:textColor="@color/grey_3"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:textSize="21sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:text="Выберите авто *"
+            android:textColor="@color/grey_4"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/uslug_type_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
+            <RelativeLayout
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/add_rel"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Добавить авто"
+                    android:textSize="15sp"
+                    android:textColor="@color/PrimaryBlue"
+                    android:layout_marginLeft="16dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_plus_blue"/>
+            </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/ProgressColor" />
+
+
+        <Button
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/btn_next_claim"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/background_blue_rectangle"
+            android:text="Отправить"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+        </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>
+
+</layout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.claims.user_claims.home.mymasters.DetailSubModelView" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_9"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/ic_back"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_default_back" />
+
+            <TextView
+                android:id="@+id/text_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                tools:text="Покраска порога"
+                android:textColor="@color/grey_2"
+                android:textFontWeight="600"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvMasterCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_filter"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                tools:text="78 678 специалистов"
+                android:textColor="#919395"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/ic_sort"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@color/White"
+                android:src="@drawable/ic_parking_history_menu" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/feedback_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{safeUnbox(viewmodel.empty) ? View.GONE : View.VISIBLE}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{safeUnbox(viewmodel.empty) ? View.VISIBLE : View.GONE}">
+
+                <ImageView
+                    android:id="@+id/ic_saa"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_frame_claim"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="50dp"
+                    android:gravity="center"
+                    android:text="Мы пока не нашли хороших специалистов, но обещаем, что они будут"
+                    android:textColor="#919395"
+                    android:textSize="17sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

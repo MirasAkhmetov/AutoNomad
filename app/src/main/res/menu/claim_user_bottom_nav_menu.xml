@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/claim_user_home"
+        android:icon="@drawable/ic_bottom_nav_home"
+        android:title="@string/feed" />
+    <item
+        android:id="@+id/claim_user_claims"
+        android:icon="@drawable/ic_bottom_my_claims"
+        android:title="@string/my_requests" />
+    <item
+        android:id="@+id/claim_user_settings"
+        android:icon="@drawable/ic_claim_bottom_settings"
+        android:title="@string/settings" />
+    <item
+        android:id="@+id/service_exit"
+        android:icon="@drawable/ic_bottom_nav_exit"
+        android:title="@string/exit" />
+</menu>

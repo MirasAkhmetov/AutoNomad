@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:elevation="4dp"
+        app:cardCornerRadius="16sp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/services"
+                    android:textFontWeight="400"
+                    android:layout_weight="150"
+                    android:textSize="12sp"
+                    android:textColor="@color/grey_4"
+                    android:text="Автосервисы"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:textFontWeight="400"
+                    android:text="05.12.19"
+                    android:textSize="12sp"
+                    android:textColor="@color/grey_4"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:textFontWeight="500"
+                    android:layout_weight="150"
+                    android:textSize="18sp"
+                    android:textColor="@color/grey_2"
+                    android:text="Техническое обслуживание"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/cost"
+                    android:text="5 000₸"
+                    android:layout_marginEnd="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textFontWeight="400"
+                    android:textColor="@color/grey_2"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

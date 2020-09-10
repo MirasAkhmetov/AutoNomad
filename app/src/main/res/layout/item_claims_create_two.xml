@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.claim_user.SubCategory" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/create_rel"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/background_grey_9_10dp_rectangle"
+        android:paddingHorizontal="16dp">
+
+        <CheckBox
+            android:id="@+id/cb_check"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:button="@drawable/selector_filter"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:src="@drawable/ic_default_checked"
+            android:textColor="@color/grey_3"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </FrameLayout>
+</layout>

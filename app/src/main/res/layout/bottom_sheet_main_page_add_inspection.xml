@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_default_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lbl_add_auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/new_auto"
+        android:textColor="@color/grey_1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/iv_back"
+        app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+    <TextView
+        android:id="@+id/lbl_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/state_number"
+        android:textColor="@color/grey_4"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@id/iv_back"
+        app:layout_constraintTop_toBottomOf="@id/lbl_add_auto" />
+
+    <EditText
+        android:id="@+id/et_state_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_rectangle_stroke_grey_3_5dp"
+        android:maxLength="8"
+        android:paddingHorizontal="36dp"
+        android:paddingVertical="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/grey_1"
+        android:textColorHint="@color/grey_5"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/lbl_hint" />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_close_16"
+        app:layout_constraintBottom_toTopOf="@id/et_state_number"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lbl_state_number_not_found"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/state_number_not_found"
+        android:textColor="@color/situational_red_error"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_state_number" />
+
+    <TextView
+        android:id="@+id/lbl_srts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/enter_srts"
+        android:textColor="@color/grey_4"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_state_number_not_found" />
+
+    <EditText
+        android:id="@+id/et_srts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_grey_8_5dp_rectangle"
+        android:hint="@string/srts"
+        android:maxLength="12"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:textColor="@color/grey_1"
+        android:textColorHint="@color/grey_4"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/lbl_srts" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_srts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="lbl_srts,et_srts" />
+
+    <Button
+        android:id="@+id/btn_add_inspection"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_blue_rectangle"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/check"
+        android:textAllCaps="false"
+        android:textColor="@color/grey_9"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_srts" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/btn_add_inspection"
+        app:layout_constraintEnd_toEndOf="@id/btn_add_inspection"
+        app:layout_constraintStart_toStartOf="@id/btn_add_inspection"
+        app:layout_constraintTop_toTopOf="@id/btn_add_inspection" />
+</androidx.constraintlayout.widget.ConstraintLayout>

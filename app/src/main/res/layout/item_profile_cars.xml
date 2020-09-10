@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.autonomad.utils.UtilKt" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.check_auto.GarageCar" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/white"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:elevation="2dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:id="@+id/rell"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/logo_of_card"-->
+                <!--                    android:layout_width="18dp"-->
+                <!--                    android:layout_height="18dp"-->
+                <!--                    android:layout_alignParentTop="true"-->
+                <!--                    android:layout_marginTop="16dp"-->
+                <!--                    android:layout_marginLeft="16dp"-->
+                <!--                    android:src="@drawable/ic_premium_badge_one" />-->
+
+                <TextView
+                    android:id="@+id/text_name_of_group1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@{itemData.titleFirst}"
+                    android:textColor="@color/grey_3"
+                    android:textFontWeight="500"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/description1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_name_of_group1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{itemData.vin}"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="500"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/proot"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_below="@id/description1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="14dp"
+                    android:src="@drawable/ic_insurance_item"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:id="@+id/layout_state_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/background_rectangle_stroke_grey_2_7dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_number_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey_2"
+                        android:textSize="12sp"
+                        app:part="@{0}"
+                        app:stateNumber="@{itemData.stateNumber}" />
+
+                    <TextView
+                        android:id="@+id/tv_number_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:textColor="@color/grey_2"
+                        android:textSize="12sp"
+                        app:part="@{1}"
+                        app:stateNumber="@{itemData.stateNumber}" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/grey_2"
+                        android:visibility="@{UtilKt.isNewFormat(itemData.stateNumber) ? View.VISIBLE : View.GONE}" />
+
+                    <TextView
+                        android:id="@+id/tv_number_third"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:textColor="@color/grey_2"
+                        android:textSize="12sp"
+                        app:part="@{2}"
+                        app:stateNumber="@{itemData.stateNumber}" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/properties"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@id/layout_state_number"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="13dp"
+                    android:src="@drawable/ic_profile_male" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_below="@id/proot"
+                    android:background="#E5E9F2"
+                    android:orientation="horizontal"
+                    android:visibility='@{itemData.srts.equals("") ? View.VISIBLE : View.GONE}'>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ic_round_info_button" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="14dp"
+                        android:text="Закончите регистрацию авто"
+                        android:textColor="@color/grey_4"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+</layout>

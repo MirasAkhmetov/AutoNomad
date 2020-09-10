@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.main_page_car.Result" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="8dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:elevation="4dp"
+        app:cardCornerRadius="16sp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/White"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/auto_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="12dp"
+                android:layout_toStartOf="@id/card_number"
+                android:text="@{itemData.title}"
+                android:textColor="@color/grey_2" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/auto_name"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/card_number">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/auto_name"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{itemData.age}"
+                    android:textColor="@color/grey_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/auto_name"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{itemData.modification.name}"
+                    android:textColor="@color/grey_4" />
+
+                <TextView
+                    android:id="@+id/auto_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/auto_name"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{itemData.car_color.name}"
+                    android:textColor="@color/grey_4" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/card_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@+id/properties"
+                android:background="@drawable/background_grey_2_12dp_border_radius"
+                android:paddingStart="16dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="2dp"
+                android:text="@{itemData.state_number}"
+                android:textColor="@color/grey_2" />
+
+            <ImageView
+                android:id="@+id/properties"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_penalty_opportunity" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

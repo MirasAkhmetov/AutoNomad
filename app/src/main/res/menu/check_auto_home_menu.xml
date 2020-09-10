@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/link_to_guide"
+        android:icon="@drawable/ic_check_auto_rounded_info_button"
+        android:orderInCategory="100"
+        android:title="check_auto_guide"
+        app:showAsAction="always" />
+</menu>

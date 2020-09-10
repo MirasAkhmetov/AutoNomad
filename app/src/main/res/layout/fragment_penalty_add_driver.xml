@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.bottom_sheet.penalty.AddDriverViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageButton
+                android:id="@+id/ic_exit"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@color/white"
+                android:src="@drawable/ic_penalty_exit" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/text_error"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.1"
+                android:background="@drawable/background_red_rectangle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Данный ИИН недействителен"
+                android:textColor="@color/Red"
+                android:textFontWeight="500"
+                android:textSize="16sp"
+                tools:targetApi="p" />
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:text="Проверьте и оплатите штрафы ПДД"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            tools:targetApi="p" />
+
+        <EditText
+            android:id="@+id/UIN"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/background_grey_8_16dp_rectangle"
+            android:gravity="center_vertical"
+            android:hint="Введите ИИН"
+            android:inputType="number"
+            android:paddingStart="16dp"
+            android:textColor="@color/grey_2"
+            android:textSize="15sp"
+            tools:ignore="RtlSymmetry" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:buttonTint="@color/PrimaryBlue" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="Согласие на обработку персональныхданных"
+                android:textColor="@color/grey_3"
+                android:textFontWeight="400"
+                android:textSize="14sp"
+                tools:targetApi="p" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <Button
+                android:id="@+id/check"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_grey_8_16dp_rectangle"
+                android:gravity="center"
+                android:text="@string/check"
+                android:textColor="@color/grey_6"
+                android:textSize="18sp"
+                android:visibility="@{viewmodel.driver.loading ? View.GONE : View.VISIBLE}" />
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="@{viewmodel.driver.loading ? View.VISIBLE : View.GONE}" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

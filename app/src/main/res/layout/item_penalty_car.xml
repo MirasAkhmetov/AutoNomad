@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    android:clipChildren="false"
+    android:background="@color/White"
+    android:clipToPadding="false"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="0.0px"
+    android:elevation="4dp"
+    app:cardCornerRadius="16sp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="7">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/car_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/Black"
+                android:textFontWeight="600"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:text="Audi S5 2019" />
+
+            <TextView
+                android:id="@+id/card_number"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/background_grey_2_12dp_border_radius"
+                android:layout_marginEnd="16dp"
+                android:text="C  3454  02" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:weightSum="5">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:id="@+id/text_volume_of_steam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Объем двигателя"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_country_of_origin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_volume_of_steam"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Страна про-ва"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/text_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_country_of_origin"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Цвет"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/volume_of_steam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_color"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Характеристика"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/country_of_origin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_toEndOf="@id/text_volume_of_steam"
+                    android:text="3,4"
+                    android:textColor="@color/Black"
+                    android:textFontWeight="400"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_volume_of_steam"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/text_volume_of_steam"
+                    android:text="Германия"
+                    android:textColor="@color/Black"
+                    android:textFontWeight="400"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/characteristics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_country_of_origin"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/text_volume_of_steam"
+                    android:text="Черный"
+                    android:textColor="@color/Black"
+                    android:textFontWeight="400"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_color"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/text_volume_of_steam"
+                    android:text="3,4"
+                    android:textColor="@color/Black"
+                    android:textFontWeight="400"
+                    android:textSize="12sp" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="128dp"
+                android:layout_weight="2"
+                android:src="@drawable/ic_penalty_car" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

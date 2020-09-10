@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="insurance"
+            type="com.autonomad.data.models.insurance.InsuranceHistory" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_profile_male"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{insurance.driver.name}"
+            android:textColor="@color/grey_3"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+        <ImageView
+            android:id="@+id/iv_car"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_bottom_sheet_car"
+            app:layout_constraintStart_toStartOf="@id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
+
+        <TextView
+            android:id="@+id/tv_car_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{(insurance.cars.mark.name ?? ``) + ` ` + (insurance.cars.model.name ?? ``)}"
+            app:layout_constraintBottom_toBottomOf="@id/iv_car"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toTopOf="@id/iv_car" />
+
+        <ImageView
+            android:id="@+id/iv_insurance_period"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="@id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@id/iv_car" />
+
+        <TextView
+            android:id="@+id/tv_last_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_4"
+            android:textSize="12sp"
+            android:text="@{insurance.insuranceCheck.dateCheck}"
+            app:layout_constraintBottom_toTopOf="@id/tv_period"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toTopOf="@id/iv_insurance_period" />
+
+        <TextView
+            android:id="@+id/tv_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_3"
+            android:textSize="12sp"
+            app:oldDateString="@{insurance.insuranceCheck.endDate}"
+            app:layout_constraintBottom_toBottomOf="@id/iv_insurance_period"
+            app:layout_constraintStart_toStartOf="@id/tv_last_update"
+            app:layout_constraintTop_toBottomOf="@id/tv_last_update"
+            app:newPattern="@{`dd MMMM yyyy`}"
+            app:prefix="@{`действительна до`}" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_default_next"
+            app:layout_constraintBottom_toBottomOf="@id/iv_insurance_period"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_insurance_period" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/ProgressColor"
+            app:layout_constraintTop_toBottomOf="@id/iv_insurance_period" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

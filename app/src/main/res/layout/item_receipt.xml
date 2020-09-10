@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="0.0px"
+    android:elevation="4dp"
+    app:cardCornerRadius="16sp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="false">
+
+    <RelativeLayout
+        android:background="@color/grey_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_name_of_ticket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Техническое обслуживание автомобиля"
+            android:textColor="@color/Black"
+            android:textFontWeight="500"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_name_of_ticket"
+            android:layout_marginStart="16dp"
+            android:text="Сумма"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="300"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_name_of_ticket"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:text="12 990₸"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="500"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_price"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Дата платежа"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="300"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_price"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="05.12.19"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="500"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_name_surname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_date"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="ФИО плательщика"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="300"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/name_surname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_date"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Иванов И. В."
+            android:textColor="@color/grey_2"
+            android:textFontWeight="500"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_paid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_name_surname"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Оплачено"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="300"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/name_surname"
+            android:layout_marginTop="16dp"
+            android:layout_toStartOf="@id/paid_by"
+            android:src="@drawable/ic_master_card"/>
+
+        <TextView
+            android:id="@+id/paid_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_name_surname"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Kaspi Bank*****2134"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="500"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

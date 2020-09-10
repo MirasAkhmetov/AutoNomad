@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.bottom_sheet.penalty.MasterComplaintViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rectangle_bottom_sheet"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/iv_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_default_back" />
+
+
+        <TextView
+            android:id="@+id/vod_name"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:text="Расскажите нам, что не так?"
+            android:textColor="@color/grey_2"
+            android:textFontWeight="600"
+            android:textSize="18sp" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:flexDirection="row"
+            app:flexWrap="wrap">
+
+            <CheckBox
+                android:id="@+id/cbSpam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_default_line_grey_6"
+                android:button="@null"
+                android:paddingStart="10dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="6dp"
+                android:layout_marginBottom="10dp"
+                android:text="Спам"
+                android:textColor="@color/PrimaryBlue"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/cbContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_default_line_grey_6"
+                android:button="@null"
+                android:paddingStart="10dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="6dp"
+                android:text="Неуместный контент"
+                android:textColor="@color/PrimaryBlue"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/cbFake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_default_line_grey_6"
+                android:button="@null"
+                android:paddingStart="10dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="6dp"
+                android:text="Ложная информация"
+                android:textColor="@color/PrimaryBlue"
+                android:textSize="14sp" />
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="14dp"
+            android:background="@drawable/background_grey_3_to_grey_6_10dp"
+            android:gravity="top|left"
+            android:hint="Опишите проблему подробнее"
+            android:inputType="text|textMultiLine"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="12dp"
+            android:textColor="@color/grey_1"
+            android:textSize="18sp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <ProgressBar
+                android:visibility="@{viewmodel.dataLoading ? View.VISIBLE : View.GONE}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:progressBackgroundTint="@color/white"
+                android:progressTint="@color/white"
+                android:translationZ="10dp" />
+
+            <Button
+                android:id="@+id/btnComplaint"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/background_blue_rectangle"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:text="@{viewmodel.dataLoading ? `` :`Пожаловаться` }"
+                android:textColor="@color/grey_9"
+                android:textFontWeight="500"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

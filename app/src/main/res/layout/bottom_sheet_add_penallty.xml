@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="textHolder"
+            type="String" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.bottom_sheet.penalty.AddDriverViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rectangle_bottom_sheet"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/iv_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_default_back" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <TextView
+                android:id="@+id/vod_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toStartOf="@id/imgperson"
+                android:text="@{viewmodel.driver.item.fullName ?? textHolder}"
+                android:textColor="@color/grey_2"
+                android:textFontWeight="600"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/imgperson"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:background="@color/white"
+                android:src="@drawable/ic_penalty_user" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:text="@string/uin"
+            android:textColor="@color/grey_4"
+            android:textSize="17sp" />
+
+        <include
+            android:id="@+id/uin_layout"
+            layout="@layout/layout_uin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp" />
+
+        <TextView
+            android:id="@+id/text_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"
+            android:text="Мы не смогли найти ваш ИИН, проверьте на корректность."
+            android:textColor="@color/situational_red_error"
+            android:textFontWeight="500"
+            android:textSize="16sp"
+            android:visibility="@{viewmodel.driver.idle ? View.VISIBLE : View.GONE}"
+            tools:targetApi="p" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:progressTint="@android:color/white"
+                android:translationZ="10dp"
+                android:visibility="@{viewmodel.driver.loading ? View.VISIBLE : View.GONE}" />
+
+            <Button
+                android:id="@+id/add_driver"
+                style="@style/ButtonPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:enabled="false"
+                android:text="@{viewmodel.driver.success ? @string/check : ``}"
+                android:textFontWeight="500" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

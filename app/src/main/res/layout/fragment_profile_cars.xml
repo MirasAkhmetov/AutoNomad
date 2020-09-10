@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.profile.avto_profile.CarsPageViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true"
+                android:visibility="@{safeUnbox(viewmodel.checkAutoSearch.loading) ? View.VISIBLE : View.GONE}" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f9fafc"
+            android:fillViewport="true"
+            android:visibility="@{safeUnbox(viewmodel.checkAutoSearch.loading) ? View.GONE : View.VISIBLE}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lin_prof1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="@{safeUnbox(viewmodel.empty) ? View.VISIBLE : View.GONE}">
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="114dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="90dp"
+                        android:layout_marginBottom="20dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_undraw_city_driver_jh2h" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="105dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:text="У Вас еще нет автомобилей"
+                            android:textColor="@color/grey_3"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt1"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="Добавьте авто, чтобы вы могли создавать заявки на ремонт и проверять действительность страховки"
+                            android:textColor="@color/grey_3"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/btn_profile_addcars"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="6dp"
+                            android:layout_marginBottom="55dp"
+                            android:background="@drawable/background_blue_rectangle"
+                            android:text="@string/add_auto"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"
+                            android:textStyle="normal" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_prof2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:visibility="@{safeUnbox(viewmodel.empty) ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_profile_cars"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/add_profile_car"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/background_blue_rectangle"
+                        android:text="@string/add_auto"
+                        android:textAllCaps="false"
+                        android:textColor="@color/grey_9"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

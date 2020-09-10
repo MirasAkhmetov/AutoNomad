@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="specialist"
+            type="com.autonomad.data.models.claims.Specialist" />
+
+        <variable
+            name="reviewsCount"
+            type="int" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.claims.specialist_claims.settings.profile.ProfileFragment">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_default_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Анкета"
+            android:textColor="@color/grey_3"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:overScrollMode="ifContentScrolls"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_back">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_profile_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_photo"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="47dp"
+                        android:src="@drawable/ic_profile_male"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text='@{specialist.profile.firstName + " " + specialist.profile.lastName}'
+                        android:textColor="@color/grey_2"
+                        android:textSize="18sp"
+                        android:visibility="@{specialist.profile != null ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintStart_toEndOf="@id/iv_photo"
+                        app:layout_constraintTop_toTopOf="@id/iv_photo" />
+
+                    <TextView
+                        android:id="@+id/tv_phone_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@{specialist.profile.phone}"
+                        android:textColor="@color/grey_4"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{specialist.profile.email}"
+                        android:textColor="@color/grey_4"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_phone_number" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/ic_default_next"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey_8"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="18dp"
+                    android:text="Список услуг"
+                    android:textColor="@color/grey_2"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lbl_add_services"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="60dp"
+                    android:text="Укажите цены, чтобы получать больше заявок из каталога"
+                    android:textColor="@color/grey_4"
+                    android:textSize="15sp"
+                    android:visibility="@{specialist.offersList.size() == 0 &amp;&amp; specialist.offers.size() == 0 ? View.VISIBLE : View.GONE}" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_services"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:paddingHorizontal="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <TextView
+                    android:id="@+id/tv_add_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_plus_blue"
+                    android:paddingStart="16dp"
+                    android:paddingTop="25dp"
+                    android:paddingEnd="21dp"
+                    android:paddingBottom="24dp"
+                    android:text="Добавить услугу"
+                    android:textColor="@color/PrimaryBlue"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey_8"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="18dp"
+                    android:text="Фото работ"
+                    android:textColor="@color/grey_2"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lbl_add_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="16dp"
+                    android:text="Добавьте фото работ"
+                    android:textColor="@color/grey_4"
+                    android:textSize="15sp"
+                    android:visibility="@{specialist.images.size() == 0 ? View.VISIBLE : View.GONE}" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_photos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingVertical="16dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="0dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <View
+                    android:id="@+id/divider_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@color/grey_7"
+                    android:visibility="@{specialist.images.size() != 0 ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_add_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_plus_blue"
+                    android:paddingStart="16dp"
+                    android:paddingTop="25dp"
+                    android:paddingEnd="21dp"
+                    android:paddingBottom="24dp"
+                    android:text="Добавить фото"
+                    android:textColor="@color/PrimaryBlue"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey_8"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="18dp"
+                    android:text="Отзывы"
+                    android:textColor="@color/grey_2"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lbl_no_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp"
+                    android:text="Отзывов пока нет"
+                    android:textColor="@color/grey_4"
+                    android:textSize="15sp"
+                    android:visibility="@{reviewsCount == 0 ? View.VISIBLE : View.GONE}" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_feedback_avg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="37dp"
+                        android:minWidth="51dp"
+                        android:text="@{String.valueOf(specialist.starAvg)}"
+                        android:textColor="@color/grey_3"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_feedback_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="3dp"
+                        android:text="@{specialist.stars.getTotal()}"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_feedback_avg" />
+
+                    <TextView
+                        android:id="@+id/tv_five_star_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="77dp"
+                        android:layout_marginTop="16dp"
+                        android:minWidth="16dp"
+                        android:text="@{String.valueOf((int)specialist.stars.five)}"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintStart_toEndOf="@id/tv_feedback_avg"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_four_star_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:minWidth="16dp"
+                        android:text="@{String.valueOf((int)specialist.stars.four)}"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintStart_toStartOf="@id/tv_five_star_count"
+                        app:layout_constraintTop_toBottomOf="@id/tv_five_star_count" />
+
+                    <TextView
+                        android:id="@+id/tv_three_star_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:minWidth="16dp"
+                        android:text="@{String.valueOf((int)specialist.stars.three)}"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintStart_toStartOf="@id/tv_five_star_count"
+                        app:layout_constraintTop_toBottomOf="@id/tv_four_star_count" />
+
+                    <TextView
+                        android:id="@+id/tv_two_star_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:minWidth="16dp"
+                        android:text="@{String.valueOf((int)specialist.stars.two)}"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintStart_toStartOf="@id/tv_five_star_count"
+                        app:layout_constraintTop_toBottomOf="@id/tv_three_star_count" />
+
+                    <TextView
+                        android:id="@+id/tv_one_star_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:minWidth="16dp"
+                        android:text="@{String.valueOf((int)specialist.stars.one)}"
+                        android:textColor="@color/grey_4"
+                        app:layout_constraintStart_toStartOf="@id/tv_five_star_count"
+                        app:layout_constraintTop_toBottomOf="@id/tv_two_star_count" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/barrier_tv_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="end"
+                        app:constraint_referenced_ids="tv_three_star_count,tv_one_star_count,tv_five_star_count,tv_two_star_count,tv_four_star_count"
+                        tools:layout_editor_absoluteX="411dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_five_star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/ic_5_stars"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_five_star_count"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_five_star_count" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_4_stars"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_four_star_count"
+                        app:layout_constraintEnd_toEndOf="@id/iv_five_star"
+                        app:layout_constraintTop_toTopOf="@id/tv_four_star_count" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_3_stars"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_three_star_count"
+                        app:layout_constraintEnd_toEndOf="@id/iv_five_star"
+                        app:layout_constraintTop_toTopOf="@id/tv_three_star_count" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_2_stars"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_two_star_count"
+                        app:layout_constraintEnd_toEndOf="@id/iv_five_star"
+                        app:layout_constraintTop_toTopOf="@id/tv_two_star_count" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_1_star"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_one_star_count"
+                        app:layout_constraintEnd_toEndOf="@id/iv_five_star"
+                        app:layout_constraintTop_toTopOf="@id/tv_one_star_count" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_five_stars"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:max="@{(int)specialist.stars.sum}"
+                        android:progress="@{(int)specialist.stars.five}"
+                        android:progressBackgroundTint="@color/grey_6"
+                        android:progressBackgroundTintMode="src_over"
+                        android:progressTint="@color/grey_3"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_five_star_count"
+                        app:layout_constraintEnd_toStartOf="@id/iv_five_star"
+                        app:layout_constraintStart_toEndOf="@id/barrier_tv_count"
+                        app:layout_constraintTop_toTopOf="@id/tv_five_star_count" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_four_stars"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="@{(int)specialist.stars.sum}"
+                        android:progress="@{(int)specialist.stars.four}"
+                        android:progressBackgroundTint="@color/grey_6"
+                        android:progressBackgroundTintMode="src_over"
+                        android:progressTint="@color/grey_3"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_four_star_count"
+                        app:layout_constraintEnd_toEndOf="@id/pb_five_stars"
+                        app:layout_constraintStart_toStartOf="@id/pb_five_stars"
+                        app:layout_constraintTop_toTopOf="@id/tv_four_star_count" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_three_stars"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="@{(int)specialist.stars.sum}"
+                        android:progress="@{(int)specialist.stars.three}"
+                        android:progressBackgroundTint="@color/grey_6"
+                        android:progressBackgroundTintMode="src_over"
+                        android:progressTint="@color/grey_3"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_three_star_count"
+                        app:layout_constraintEnd_toEndOf="@id/pb_five_stars"
+                        app:layout_constraintStart_toStartOf="@id/pb_five_stars"
+                        app:layout_constraintTop_toTopOf="@id/tv_three_star_count" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_two_stars"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="@{(int)specialist.stars.sum}"
+                        android:progress="@{(int)specialist.stars.two}"
+                        android:progressBackgroundTint="@color/grey_6"
+                        android:progressBackgroundTintMode="src_over"
+                        android:progressTint="@color/grey_3"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_two_star_count"
+                        app:layout_constraintEnd_toEndOf="@id/pb_five_stars"
+                        app:layout_constraintStart_toStartOf="@id/pb_five_stars"
+                        app:layout_constraintTop_toTopOf="@id/tv_two_star_count" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_one_star"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="@{(int)specialist.stars.sum}"
+                        android:progress="@{(int)specialist.stars.one}"
+                        android:progressBackgroundTint="@color/grey_6"
+                        android:progressBackgroundTintMode="src_over"
+                        android:progressTint="@color/grey_3"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_one_star_count"
+                        app:layout_constraintEnd_toEndOf="@id/pb_five_stars"
+                        app:layout_constraintStart_toStartOf="@id/pb_five_stars"
+                        app:layout_constraintTop_toTopOf="@id/tv_one_star_count" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_reviews"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="18dp"
+                        android:overScrollMode="never"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/tv_one_star_count" />
+
+                    <TextView
+                        android:id="@+id/tv_watch_all_reviews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="26dp"
+                        android:text="Смотреть все"
+                        android:textColor="@color/PrimaryBlue"
+                        android:textSize="15sp"
+                        android:visibility="@{(int)specialist.stars.sum > 0 ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rv_reviews" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

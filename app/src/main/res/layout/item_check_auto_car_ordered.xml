@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.check_auto.CheckAutoHistory" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="6dp"
+        app:cardBackgroundColor="@color/grey_9"
+        app:cardCornerRadius="16sp"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/iv_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/ic_penalty_opportunity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/car_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="12dp"
+                android:text='@{itemData.title}'
+                android:textColor="@color/grey_3"
+                android:textFontWeight="500"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_options"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_options"
+                app:layout_constraintTop_toTopOf="@id/iv_options" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="18dp"
+                android:alpha="0.1"
+                android:background="@color/grey_2"
+                app:layout_constraintTop_toBottomOf="@id/iv_options" />
+
+            <ImageView
+                android:id="@+id/iv_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_car_arrows"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="данные куплены"
+                android:textColor="@color/grey_3"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_car"
+                app:layout_constraintStart_toEndOf="@id/iv_car" />
+
+            <ImageView
+                android:layout_width="3dp"
+                android:layout_height="3dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_dot"
+                app:layout_constraintBottom_toBottomOf="@id/tv_status"
+                app:layout_constraintStart_toEndOf="@id/tv_status"
+                app:layout_constraintTop_toTopOf="@id/tv_status" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginEnd="8dp"
+                android:alpha="0.4"
+                android:ellipsize="end"
+                android:singleLine="true"
+                app:newPattern="@{`dd MMMM, yyyy`}"
+                app:oldDateString="@{itemData.date}"
+                app:pattern="@{`yyyy-MM-dd`}"
+                android:textColor="@color/grey_2"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_status"
+                app:layout_constraintEnd_toStartOf="@id/iv_dropdown"
+                app:layout_constraintStart_toEndOf="@id/tv_status" />
+
+            <ImageView
+                android:id="@+id/iv_dropdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/ic_penalty_info_hidden"
+                app:layout_constraintBottom_toBottomOf="@id/tv_status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_status" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_details"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_status">
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/iv_warning_dtp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:src="@drawable/ic_warning"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="16dp"-->
+<!--                    android:text="@{itemData.dtpStatus.state == 0 ? `Данные о ДТП не найдены` : itemData.dtpStatus.state == 1 ? `Наличие ДТП информинг (` + itemData.dtpStatus.count + `)` : `Данные о ДТП куплены`}"-->
+<!--                    android:textColor="@{itemData.dtpStatus.state == 0 ? @color/PrimaryBlue : itemData.dtpStatus.state == 1 ? @color/situational_red_error : @color/situational_error}"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/iv_warning_dtp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/iv_warning_dtp"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/iv_warning_dtp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/iv_warning_history"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:src="@drawable/ic_warning"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/iv_warning_dtp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="16dp"-->
+<!--                    android:text="@{itemData.historyStatus.state == 0 ? @string/history_not_found : itemData.historyStatus.state == 1 ? `Наличие ДТП информинг (` + itemData.historyStatus.count + `)` : `Данные о ДТП куплены`}"-->
+<!--                    android:textColor="@{itemData.historyStatus.state == 0 ? @color/PrimaryBlue : itemData.historyStatus.state == 1 ? @color/situational_red_error : @color/situational_error}"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/iv_warning_history"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/iv_warning_history" />-->
+
+                <Button
+                    android:id="@+id/report"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/background_blue_rectangle"
+                    android:text="Отчет"
+                    android:textAllCaps="false"
+                    android:textColor="@color/grey_9"
+                    android:textSize="17sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

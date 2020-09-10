@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    android:layout_width="280dp"
+    android:layout_height="156dp"
+    android:background="@drawable/background_grey_8_16dp_rectangle"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_profile_deleted" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Водитель успешно удален!"
+        android:textColor="@color/Black"
+        android:textFontWeight="500"
+        android:textSize="18sp" />
+
+</LinearLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.claim_user.Services" />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:id="@+id/rectangle"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:paddingBottom="16dp"
+    android:background="@{itemData.status.value==1 ? @drawable/background_light_blue_rectangle2: @drawable/background_light_red_16dp_rectangle}" >
+
+    <ImageView
+        android:id="@+id/properties"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_penalty_opportunity"/>
+    <TextView
+        android:id="@+id/problem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/properties"
+        android:paddingEnd="48dp"
+        android:text="@{itemData.title}"
+        android:textColor="@color/grey_2"
+        android:textFontWeight="600"
+        android:textSize="16sp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/status"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/problem"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:background="@drawable/background_grey_7_12dp_rectangle"-->
+<!--        android:padding="8dp"-->
+<!--        android:text="Активно"-->
+<!--        android:textColor="@color/situational_error"-->
+<!--        android:textSize="16sp" />-->
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/problem"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/grey_7" />
+    <ImageView
+        android:id="@+id/proot"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="16dp"
+        android:layout_below="@id/line1"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_bottom_feedbacs" />
+    <TextView
+        android:id="@+id/penalty_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line1"
+        android:layout_toEndOf="@id/proot"
+        android:layout_marginTop="8dp"
+        android:text='@{itemData.response_count==0 ? "Откликов нет":String.valueOf(itemData.response_count)+" отклик"}'
+        android:textColor="@color/grey_4"
+        android:textFontWeight="500"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/last_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/penalty_info"
+        android:layout_toEndOf="@id/proot"
+        android:layout_marginTop="2dp"
+        android:text='@{itemData.status.value==1 ? "Активна ":"Нективна "}'
+        android:textColor="@{itemData.status.value==1 ? @color/situational_error: @color/Red}"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/last_check2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/penalty_info"
+        android:layout_toEndOf="@id/last_check"
+        android:layout_marginTop="2dp"
+        android:text="@{itemData.createdReadable}"
+        android:textColor="#661F2D3D"
+        android:textSize="12sp" />
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/replies"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/status"-->
+<!--        android:layout_marginTop="16dp">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/text_replies"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/background_grey_8_16dp_rectangle"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:padding="16dp"-->
+<!--            android:text="Откликов нет"-->
+<!--            android:textColor="@color/grey_4"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="32dp"-->
+<!--            android:layout_height="32dp"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:src="@drawable/ic_default_next"/>-->
+
+<!--    </RelativeLayout>-->
+</RelativeLayout>
+</layout>

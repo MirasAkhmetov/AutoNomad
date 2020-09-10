@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="PrimaryBlue">#2F82D2</color>
+    <color name="LightBlue">#C1DAF2</color>
+    <color name="Black">#000000</color>
+    <color name="White">#ffffff</color>
+    <color name="black_grey">#23282B</color>
+    <color name="grey_1">#2C3E50</color>
+    <color name="grey_2">#1F2D3D</color>
+    <color name="grey_3">#3C4858</color>
+    <color name="grey_4">#8492A6</color>
+    <color name="grey_5">#C2CEDB</color>
+    <color name="grey_6">#D3DCE6</color>
+    <color name="grey_7">#D3DCE6</color>
+    <color name="grey_8">#EFF2F7</color>
+    <color name="grey_9">#F9FAFC</color>
+    <color name="grey_10">#1A1F2D3D</color>
+    <color name="light_green">#E7F8C5</color>
+    <color name="light_green_2">#E6F5EE</color>
+    <color name="light_blue">#E6F0F9</color>
+    <color name="light_grey">#E3E5E5</color>
+    <color name="green">#57AC57</color>
+    <color name="japonica">#5A5E60</color>
+    <color name="japonica_50">#919395</color>
+    <color name="situational_error">#38BC38</color>
+    <color name="ProgressColor">#E5E9F2</color>
+    <color name="Hint">#808080</color>
+    <color name="SmallLine">#C0C0C0</color>
+    <color name="Red">#D71010</color>
+    <color name="Transparent">#00000000</color>
+    <color name="background">#E5E5E5</color>
+    <color name="rectangle">#B2BBC6</color>
+    <color name="light_red">#FFE2D4</color>
+    <color name="situational_red_error">#FF6F29</color>
+    <color name="light_orange">#FFF7ED</color>
+    <color name="yellow">#FFD600</color>
+    <color name="dark_red">#C2453E</color>
+    <color name="color_logo">#1F70BD</color>
+    <color name="example_4_grey_past">#BEBEBE</color>
+    <color name="example_4_grey">#474747</color>
+    <color name="dialogBackground">#60000000</color>
+
+    <color name="chatReceived">#E5E9F2</color>
+</resources>

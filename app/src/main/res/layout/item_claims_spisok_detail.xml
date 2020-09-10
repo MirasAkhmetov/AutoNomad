@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemData"
+            type="com.autonomad.data.models.claim_user.Master" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/White"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="2dp"
+            app:cardCornerRadius="10sp"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/starimg"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_favorite_border_black_24dp" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ic_user"
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    android:layout_marginEnd="8dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_profile_male"
+                    app:riv_oval="true" />
+
+                <TextView
+                    android:id="@+id/text_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/ic_user"
+                    android:text="@{itemData.prof.first_name}"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="600"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_specialization"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_name"
+                    android:layout_marginTop="4dp"
+                    android:layout_toEndOf="@id/ic_user"
+                    android:text="@{itemData.description}"
+                    android:textColor="@color/grey_4"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_specialization"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/ic_user">
+
+                    <TextView
+                        android:id="@+id/text_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_star_black"
+                        android:drawablePadding="5dp"
+                        android:text="@{String.valueOf(itemData.star_avg)}"
+                        android:textColor="@color/grey_3"
+                        android:textFontWeight="800"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@id/text_rating"
+                        android:text='@{"("+String.valueOf(itemData.review_count)+" отзывов)"}'
+                        android:textColor="@color/grey_4"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

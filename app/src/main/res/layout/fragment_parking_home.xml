@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.autonomad.ui.parking.home.HomeViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White">
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/activityRoot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:openDrawer="start">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/White"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/top"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="500"
+                        android:visibility="visible">
+
+                        <androidx.appcompat.widget.SearchView
+                            android:id="@+id/searchView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/background_grey_8_25dp_rectangle"
+                            android:elevation="0dp"
+                            app:iconifiedByDefault="false"
+                            app:queryBackground="@drawable/background_grey_8_25dp_rectangle"
+                            app:queryHint="Номер парковки" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:gravity="center"
+                            android:text="@string/cancel"
+                            android:textColor="@color/PrimaryBlue"
+                            android:textFontWeight="600"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/parking_pin_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:id="@+id/zoom_in"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_zoom_in"
+                        app:layout_constraintBottom_toTopOf="@id/zoom_out"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <ImageView
+                        android:id="@+id/zoom_out"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_zoom_out"
+                        app:layout_constraintBottom_toTopOf="@id/my_location"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/zoom_in" />
+
+                    <ImageView
+                        android:id="@+id/my_location"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_my_location"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/zoom_out" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+        <FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rectangle_bottom_sheet"
+            app:behavior_hideable="true"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:layout_constrainedHeight="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/background_small_line" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Парковка"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="400"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/text_pin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@{`№`+viewmodel.pageInfo.pin}"
+                    android:textColor="@color/Black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_parking_time" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Длительность парковки"
+                        android:textColor="@color/grey_4"
+                        android:textFontWeight="400"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/minutes"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:weightSum="4">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0.0px"
+                        android:elevation="2dp"
+                        app:cardCornerRadius="16sp"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <TextView
+                            android:id="@+id/time_15_min"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/grey_3"
+                            android:gravity="center"
+                            android:text="15 мин"
+                            android:textColor="@color/White"
+                            android:textFontWeight="500"
+                            android:textSize="14sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0.0px"
+                        android:elevation="2dp"
+                        app:cardCornerRadius="16sp"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <TextView
+                            android:id="@+id/time_30_min"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/White"
+                            android:gravity="center"
+                            android:text="30 мин"
+                            android:textColor="@color/grey_3"
+                            android:textFontWeight="500"
+                            android:textSize="14sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0.0px"
+                        android:elevation="2dp"
+                        app:cardCornerRadius="16sp"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <TextView
+                            android:id="@+id/time_1_hour"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/White"
+                            android:gravity="center"
+                            android:text="1 час"
+                            android:textColor="@color/grey_3"
+                            android:textFontWeight="500"
+                            android:textSize="14sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0.0px"
+                        android:elevation="2dp"
+                        app:cardCornerRadius="16sp"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <TextView
+                            android:id="@+id/time_another"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/White"
+                            android:gravity="center"
+                            android:text="Другое"
+                            android:textColor="@color/grey_3"
+                            android:textFontWeight="500"
+                            android:textSize="14sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/timers"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@color/White"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/time_1_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="c 13:00"
+                            android:textColor="@color/grey_2"
+                            android:textFontWeight="400"
+                            android:textSize="16sp"
+                            android:visibility="invisible" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/time_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/grey_8"
+                            app:cardCornerRadius="12dp">
+
+                            <TextView
+                                android:id="@+id/time_1_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:gravity="center_vertical"
+                                android:text="1 час"
+                                android:textColor="@color/grey_4"
+                                android:textFontWeight="400"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="8dp"
+                                android:src="@drawable/ic_penalty_info_hidden" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/ic_parking_double_rounds" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:background="@color/White"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/time_2_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:text="c 13:00"
+                            android:textColor="@color/grey_2"
+                            android:textFontWeight="400"
+                            android:textSize="16sp"
+                            android:visibility="invisible" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/time_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/grey_8"
+                            app:cardCornerRadius="12dp">
+
+                            <TextView
+                                android:id="@+id/time_2_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:gravity="center_vertical"
+                                android:text="0 мин"
+                                android:textColor="@color/grey_4"
+                                android:textFontWeight="400"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="8dp"
+                                android:src="@drawable/ic_penalty_info_hidden" />
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ranged_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="1 час 30 минут"
+                    android:textColor="@color/grey_2"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/car"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_parking_small_car" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:text="@{safeUnbox(viewmodel.pageInfo.carNumber.length()>1)?viewmodel.pageInfo.carNumber:`Номер машины`}"
+                            android:textColor="@color/PrimaryBlue"
+                            android:textFontWeight="400"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:background="@color/rectangle" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/banking_card"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_banking_card_logo" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@{safeUnbox(viewmodel.pageInfo.bankingCard.length()>1)?viewmodel.pageInfo.bankingCard:`Карта`}"
+                            android:textColor="@color/PrimaryBlue"
+                            android:textFontWeight="400"
+                            android:textSize="14sp"
+                            tools:ignore="NestedWeights" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Итого к оплате:"
+                        android:textColor="@color/Black"
+                        android:textFontWeight="400"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@{safeUnbox(viewmodel.pageInfo.price.length()>0)?viewmodel.pageInfo.price+`₸`:`0₸`}"
+                        android:textColor="@color/Black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <Button
+                        android:id="@+id/parking"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@{safeUnbox(viewmodel.dataLoading)?@drawable/background_grey_8_16dp_rectangle:@drawable/background_blue_rectangle}"
+                        android:gravity="center"
+                        android:text="@{safeUnbox(viewmodel.dataLoading)?``:`Припарковаться`}"
+                        android:textColor="@color/grey_9"
+                        android:textFontWeight="500"
+                        android:textSize="18sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_centerInParent="true"
+                        android:translationZ="10dp"
+                        android:visibility="@{safeUnbox(viewmodel.dataLoading)?View.VISIBLE:View.GONE}" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/forgotten_parking"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:text="Забыл оплатить парковку"
+                    android:textColor="@color/grey_4"
+                    android:textFontWeight="500"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/bottom_sheet_add_banking_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rectangle_bottom_sheet"
+            app:behavior_hideable="true"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:layout_constrainedHeight="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/background_small_line" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/background_white_with_grey7_line"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/card_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/background_grey_8_16dp_rectangle"
+                        android:gravity="center_vertical"
+                        android:hint="Номер карты"
+                        android:inputType="number"
+                        android:paddingStart="16dp"
+                        android:textColor="@color/grey_2"
+                        android:textFontWeight="500"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:weightSum="2">
+
+                        <EditText
+                            android:id="@+id/expire_date_number"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/background_grey_8_16dp_rectangle"
+                            android:gravity="center_vertical"
+                            android:hint="ММ/ГГ"
+                            android:inputType="number"
+                            android:paddingStart="16dp"
+                            android:textColor="@color/grey_2"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/cvv_number"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/background_grey_8_16dp_rectangle"
+                            android:gravity="center_vertical"
+                            android:hint="CVV"
+                            android:inputType="numberPassword"
+                            android:paddingStart="16dp"
+                            android:textColor="@color/grey_2"
+                            android:textFontWeight="500"
+                            android:textSize="14sp"
+                            tools:ignore="RtlSymmetry" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_card_mastercard"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="24dp"
+                            android:src="@drawable/ic_visa"
+                            tools:ignore="ContentDescription" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_margin="16dp">
+
+                    <ProgressBar
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:translationZ="10dp"
+                        android:visibility="@{safeUnbox(viewmodel.dataLoading) ? View.VISIBLE : View.GONE}" />
+
+                    <Button
+                        android:id="@+id/add_banking_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/background_blue_rectangle"
+                        android:gravity="center"
+                        android:text="@{safeUnbox(viewmodel.dataLoading) ? `` : `Продолжить`}"
+                        android:textColor="@color/grey_9"
+                        android:textFontWeight="500"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

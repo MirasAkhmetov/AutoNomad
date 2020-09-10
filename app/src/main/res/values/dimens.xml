@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="map_control">44dp</dimen>
+    <dimen name="map_control_radius">22dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="no_padding">0dp</dimen>
+</resources>
