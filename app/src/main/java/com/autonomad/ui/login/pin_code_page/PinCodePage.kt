@@ -131,7 +131,10 @@ class PinCodePage : Fragment(R.layout.fragment_login_pin_code) {
             }
         }
         ic_exit.setOnClickListener {
-            activity?.onBackPressed()
+               findNavController().navigate(
+                R.id.action_pinCodePage_to_loginFragment,
+                bundleOf(LoginFragment.SET_LOGIN to true)
+            )
         }
     }
 
