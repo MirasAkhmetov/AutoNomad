@@ -12,6 +12,7 @@ import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.login_page.*
 
 class LoginFragment : Fragment(R.layout.login_page) {
+     private var stayLogin = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -23,8 +24,16 @@ class LoginFragment : Fragment(R.layout.login_page) {
         tabLayout.setupWithViewPager(pager)
         tabLayout.getTabAt(0)?.text = "Вход"
         tabLayout.getTabAt(1)?.text = "Регистрация"
+        
+          if (arguments?.getBoolean(SET_LOGIN) == true) {
+                stayLogin = true
+            }
 
-        if (Methods.key.isNotEmpty())
+        if (Methods.key.isNotEmpty() && !stayLogin)
             findNavController().navigate(R.id.main_page, bundleOf(MainActivity.MESSAGE to MainActivity.SET_MAIN))
+    }
+    
+    companion object {
+        const val SET_LOGIN = "navigationMessage"
     }
 }
